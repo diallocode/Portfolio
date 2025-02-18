@@ -1,12 +1,115 @@
 @import 'variables.css';  /* Importation des variables */
 
 
+@media screen and (min-width: 1152px) {
+    :root {
+        --biggest-font-size: 4rem;
+        --bigger-font-size: 2rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 2.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+        }
+    }
 
-.main{
-    overflow: hidden; /* pour l'animation */
+
+/* CSS commun a toute la page */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
-/* pour la bar de navigation et le menu */
+html{
+    scroll-behavior: smooth;
+}
+
+input,
+textarea,
+button,
+body{
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+body{
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+input,
+textarea,
+button{
+    outline: none;
+    border: none;
+}
+
+h1,h2,h3,h4{
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+}
+
+ul{
+    list-style:none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img,
+svg{
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* CSS reutilisable */
+.container{
+    max-width: 1120px;
+    margin-inline: 1.5rem;
+}
+
+.grid{
+    display: grid;
+    gap: 1.5rem;
+}
+
+.section{
+    padding-block: 5rem 2rem;
+}
+
+.section__title,
+.section__subtitle{
+    text-align: center;
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+}
+
+.section__title{
+    font-size: var(--h1-font-size);
+    margin-bottom: 1.5rem;
+}
+
+.section__subtitle{
+    font-size: var(--small-font-size);
+    margin-bottom: .25rem;
+}
+
+.section__subtitle span{
+    color: var(--first-color);
+}
+
+.main{
+    overflow: hidden; /* pour l'aninations de la scrollReveal */
+}
+
+
+
+
+/* css de la nav_bar et du menu*/
 .header{
     position: fixed;
     width: 100%;
@@ -33,9 +136,57 @@
 }
 
 
-.nav__tooggle,
+.nav__toggle,
 .nav__close{
     display: flex;
     font-size: 1.25rem;
     color: var(--title-color);
+    cursor: pointer;
 }
+
+
+/* Navigation pour les telephones */
+@media screen and (max-width:1023px) {
+    .nav__menu{
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background-color: hsla(0, 0%, 10%, .3);
+        width: 75%;
+        height: 100%;
+        padding: 4.5rem 0 0 3rem;
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);   /* For safari divices */
+        transition: right .4s;
+    }
+    
+}
+
+.show-menu{
+    right: 0;
+}
+
+
+.nav__list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+}
+
+.nav__link{
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    transition: color .4s;
+}
+
+.nav__link:hover{
+    color: var(--first-color);
+}
+
+.nav__close{
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+}
+
+
