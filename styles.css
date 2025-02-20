@@ -323,3 +323,79 @@ svg{
 .about__blob path{
     stroke: var(--first-color);
 }
+
+/* CSS Skills */
+.skills{
+    background-color: var(--container-color);
+}
+
+.skills__container{
+    padding-bottom: 2rem;
+    row-gap: 3.5rem;
+}
+
+.skills__data{
+    text-align: center;
+}
+
+.skills__descriptions{
+    margin-bottom: 2rem;
+}
+
+.skills__content,
+.skills__group{
+    display: grid;
+}
+
+.skills__content{
+    grid-template-columns: repeat(2, max-content); /* diviser en deux la liste de competence*/
+    column-gap: 4rem;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.skills__group{
+    row-gap: 1rem;
+    list-style: decimal-leading-zero; /* fait la liste sous forme 01 02 etc ...*/
+}
+
+.skills__item{
+    font-weight: var(--font-medium);
+    color: var(--title-color);
+}
+
+.skills__item::marker{
+    color:var(--first-color); /* Colorer les numeros de listes*/
+}
+
+/* CSS SERVICES */
+.services__container{
+    row-gap: 2rem;
+    padding-block: 1rem;
+}
+
+.services__card{
+    text-align: center;
+    background-color: var(--container-color);
+    padding: 3rem 1.25rem;
+    border-radius: 1rem;
+    border: 2px solid var(--container-color);
+    transition: border .4s;
+}
+
+.services__icon{
+    display: block;
+    font-size: 4rem;
+    color: var(--first-color);
+    margin-bottom: 0.75rem;
+}
+
+.services__title{
+    font-size:var(--h2-font-size);
+    margin-bottom: 1.5rem;
+}
+
+.services__card:hover{
+    border: 2px solid var(--first-color);
+}
+
