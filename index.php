@@ -61,10 +61,10 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <!-- ScrollReveal JS -->
-    <script src="scrollreveal.min.js"></script>
+    <script src="assets/js/scrollreveal.min.js"></script>
   
     <!-- MAIN JS -->
-    <script src="main.js" ></script>
+    <script src="assets/js/main.js" ></script>
 
 </body>
 </html>
