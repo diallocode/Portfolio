@@ -4,3 +4,7 @@
 ## Service
 ## Contact
 ## Certification
+
+
+## Lancer le server php
+    php -S localhost:8000
