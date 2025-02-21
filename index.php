@@ -4,7 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css"> <!-- Bibliotheque css pour nav__close et nav__tooggle -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- import des fichier css -->
+    <link rel="stylesheet" href="assets/css/a_propos.css">
+    <link rel="stylesheet" href="assets/css/commun.css">
+    <link rel="stylesheet" href="assets/css/competences.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="assets/css/experiences.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="assets/css/nav_bar.css">
+    <link rel="stylesheet" href="assets/css/projets.css">
+
     <title>my_portfolio</title>
 </head>
 
