@@ -99,3 +99,17 @@ sr.reveal('.home__image', {origin: 'bottom'})
 sr.reveal('.about__data, .skills__data', {origin: 'left'})
 sr.reveal('.about__image, .skills__content', {origin: 'right'})
 sr.reveal('.services__card, .projects__card', {interval: '100'})
+
+
+const tablinks = document.getElementsByClassName('about__links')
+const tabcontents = document.getElementsByClassName('liste__contents')
+function opentab(tabname, event){
+    for(let tablink of tablinks){
+        tablink.classList.remove("active-links");
+    }
+    for(let tabcontent of tabcontents){
+        tabcontent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add('active-links');
+    document.getElementById(tabname).classList.add("active-tab");
+}
