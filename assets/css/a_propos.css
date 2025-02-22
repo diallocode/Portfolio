@@ -10,7 +10,7 @@
 }
 
 .about__description{
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .about__image{
@@ -23,4 +23,56 @@
 
 .about__blob path{
     stroke: var(--first-color);
+}
+
+.tab__section{
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.about__links{
+    margin-right: 40px;
+    font-size: 1rem;
+    font-weight: 50px;
+    cursor: pointer;
+    position: relative;
+    color: var(--title-color);
+}
+
+.about__links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: var(--first-color);
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.about__links.active-links::after{
+    width: 50%;
+}
+
+.liste__contents{
+    text-align: justify;
+    hyphens: auto;
+}
+
+.liste__contents ul li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.liste__contents ul li span{
+    color: var(--first-color);
+    font-size: var(--h3-font-size);
+} 
+
+.liste__contents{
+    display: none;
+}
+
+.liste__contents.active-tab{
+    display: block;
 }
