@@ -72,3 +72,37 @@
 .projects__card:hover .projects__modal{
     bottom: 0;
 }
+
+
+.search__form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.search__input, .search__select {
+    padding: 3px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 16px;
+}
+
+.search__input {
+    width: 250px;
+}
+
+.search__select {
+    width: 180px;
+}
+
+@media (max-width: 768px) {
+    .search__form {
+        flex-direction: column;
+        align-items: center;
+    }
+    .search__input, .search__select {
+        width: 100%;
+    }
+}
+
