@@ -1,9 +1,58 @@
-@import 'variables.css';  /* Importation des variables */
-
-
-.contact__container{
-    padding-top: 1rem;
+.contact__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+    gap: 2rem;
+    align-items: start;
 }
+
+/* 📌 Bloc des infos de contact */
+.contact__info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.contact__item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, 0.3s ease;
+}
+
+/* 🔥 Animation au survol */
+.contact__item:hover {
+    transform: scale(1.05);
+    background: #e3e3e3;
+}
+
+.contact__item i {
+    font-size: 24px;
+    color: #007BFF;
+}
+
+/* Pour le formulaire */
+.contact__info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact__item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.contact__item i {
+    font-size: 24px;
+    color: #007BFF;
+}
+
 
 .contact__form,
 .contact__group{
