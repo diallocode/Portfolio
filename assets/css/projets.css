@@ -96,12 +96,70 @@
     width: 180px;
 }
 
+/* Styles pour le bouton "Voir plus" */
+.projects__description{
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.projects__description:hover {
+    background-color: #0056b3;
+}
+
+
+/* Styles pour le bouton "Voir plus de projets" */
+.projects__more-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px; /* Espace au-dessus du bouton */
+}
+
+.projects__more {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s; /* Animation fluide */
+}
+
+.projects__more:hover {
+    background-color: #0056b3;
+}
+
+
+
 @media (max-width: 768px) {
     .search__form {
         flex-direction: column;
         align-items: center;
     }
     .search__input, .search__select {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects__more{
+        flex-direction: column;
+        align-items: center;
+    }
+    .projects__more {
         width: 100%;
     }
 }
