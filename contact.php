@@ -22,29 +22,7 @@ $pages_path = "pages/";
 <!-- MAIN -->
 <main class="main">
     <!-- Projects Section -->
-    
-    <section class="projects">
-        <h2>Projects</h2>
-        <div class="projects__container container grid">
-            <?php
-            $stmt = $db->query("SELECT * FROM projects");
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                echo "<article class='projects__card'>";
-                if (!empty($row['image'])) {
-                    echo "<img src='" . htmlspecialchars($row['image']) . "' alt='" . htmlspecialchars($row['name']) . "' class='projects__img'>";
-                }
-                echo "<div class='projects__modal'>";
-                echo "<span class='projects__subtitle'>" . htmlspecialchars($row['category']) . "</span>";
-                echo "<h2 class='projects__title'>" . htmlspecialchars($row['name']) . "</h2>";
-                echo "<p>" . htmlspecialchars($row['description']) . "</p>";
-                echo "<a href='#' class='projects__button'>Voir plus <i class='ri-external-link-line'></i></a>";
-                echo "</div>";
-                echo "</article>";
-            }
-            ?>
-        </div>
-    </section>
-
+    <?php include_once $pages_path . 'projets.html'; ?>
     <!-- Contact Section -->
     <?php include_once $pages_path . 'contact.html'; ?>
 </main>
@@ -53,5 +31,8 @@ $pages_path = "pages/";
 <footer class="footer">
     <?php include_once $pages_path . 'footer.html'; ?>
 </footer>
+
+<!-- Include the JavaScript file for loading projects -->
+<script src="assets/js/loadProjects.js" defer></script>
 </body>
 </html>
