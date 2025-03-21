@@ -3,6 +3,7 @@ require_once 'php/Database.php';
 $db = Database::getInstance()->getConnection();
 
 $pages_path = "pages/";
+$php_path = "php/";
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +23,7 @@ $pages_path = "pages/";
 <!-- MAIN -->
 <main class="main">
     <!-- Projects Section -->
-    <?php include_once $pages_path . 'projets.html'; ?>
+    <?php include_once $php_path . 'projets.php'; ?>
     <!-- Contact Section -->
     <?php include_once $pages_path . 'contact.html'; ?>
 </main>
