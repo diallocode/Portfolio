@@ -1,47 +1,98 @@
-// Fichier js qui permet de charger dynamiquement mes projets
 document.addEventListener('DOMContentLoaded', function() {
-    const projectsContainer = document.querySelector('.projects__container');
-    fetch('../php/get_projet.php')
-        .then(response => response.json())
-        .then(data => {
-            data.forEach(project => {
-                const projectCard = document.createElement('article');
-                projectCard.classList.add('projects__card');
+    const loadMoreButton = document.getElementById('showMoreProjects');
+    const projectsContainer = document.getElementById('projectsContainer');
 
-                if (project.image) {
-                    const img = document.createElement('img');
-                    img.src = project.image;
-                    img.alt = project.name;
-                    img.classList.add('projects__img');
-                    projectCard.appendChild(img);
-                }
+    if (loadMoreButton) {
+        let offset = 3; // Initial offset, assuming the first 5 projects are already loaded
 
-                const modal = document.createElement('div');
-                modal.classList.add('projects__modal');
+        loadMoreButton.addEventListener('click', function() {
+            fetch(`php/get_more_project.php?offset=${offset}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.length === 0) {
+                        loadMoreButton.style.display = 'none'; // Cacher le bouton s'il n'y a plus de projets
+                        return;
+                    }
 
-                const subtitle = document.createElement('span');
-                subtitle.classList.add('projects__subtitle');
-                subtitle.textContent = project.category;
-                modal.appendChild(subtitle);
+                    data.forEach(project => {
+                        const projectCard = document.createElement('article');
+                        projectCard.classList.add('projects__card');
 
-                const title = document.createElement('h2');
-                title.classList.add('projects__title');
-                title.textContent = project.name;
-                modal.appendChild(title);
+                        if (project.image) {
+                            const img = document.createElement('img');
+                            img.src = project.image;
+                            img.alt = project.name;
+                            img.classList.add('projects__img');
+                            projectCard.appendChild(img);
+                        }
 
-                const description = document.createElement('p');
-                description.textContent = project.description;
-                modal.appendChild(description);
+                        const modal = document.createElement('div');
+                        modal.classList.add('projects__modal');
 
-                const link = document.createElement('a');
-                link.href = project.show_more_link;
-                link.classList.add('projects__button');
-                link.innerHTML = 'Voir plus <i class="ri-external-link-line"></i>';
-                console.log('Show More Link:', project.show_more_link); // Debugging log
-                modal.appendChild(link);
+                        const subtitle = document.createElement('span');
+                        subtitle.classList.add('projects__subtitle');
+                        subtitle.textContent = project.category;
+                        modal.appendChild(subtitle);
 
-                projectCard.appendChild(modal);
-                projectsContainer.appendChild(projectCard);
-            });
+                        const title = document.createElement('h2');
+                        title.classList.add('projects__title');
+                        title.textContent = project.name;
+                        modal.appendChild(title);
+
+                        const description = document.createElement('p');
+                        description.classList.add('projects__description-text');
+                        description.id = 'description-' + project.id;
+                        description.style.display = 'none'; // Ensure the description is hidden by default
+                        modal.appendChild(description);
+
+                        const showDescriptionButton = document.createElement('button');
+                        showDescriptionButton.classList.add('projects__description');
+                        showDescriptionButton.textContent = 'Voir plus';
+                        showDescriptionButton.onclick = function() {
+                            loadDescription(project.id);
+                        };
+                        modal.appendChild(showDescriptionButton);
+
+                        const link = document.createElement('a');
+                        link.href = project.show_more_link;
+                        link.classList.add('projects__button');
+                        link.innerHTML = 'Git <i class="ri-external-link-line"></i>';
+                        modal.appendChild(link);
+
+                        projectCard.appendChild(modal);
+                        projectsContainer.appendChild(projectCard);
+                    });
+
+                    offset += 3; // Charger les 3 prochains projets au prochain clic
+                })
+                .catch(error => console.error('Error fetching projects:', error));
         });
+    }
 });
+
+function loadDescription(projectId) {
+    const descriptionElement = document.getElementById('description-' + projectId);
+
+    if (!descriptionElement) {
+        console.error(`Element description-${projectId} non trouvé.`);
+        return;
+    }
+
+    fetch(`php/get_description.php?id=${projectId}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Problème réseau');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data && data.description) {
+                descriptionElement.textContent = data.description;
+                descriptionElement.classList.add('projects__description-text');
+                descriptionElement.style.display = 'block';
+            } else {
+                console.error('Aucune description trouvée pour le projet ID:', projectId);
+            }
+        })
+        .catch(error => console.error('Erreur récupération description:', error));
+}
