@@ -25,7 +25,7 @@
 <!--HEADER-->
     <header class="header" id="header">
         <?php include_once $pages_path . 'menu_nav.html'; ?>
-        <a href="php/admin_page.php">Admin-Page</a>
+        <a href="php/login.php">Login-Page</a>
     </header>
 
 <!-- MAIN -->
