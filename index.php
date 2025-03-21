@@ -6,9 +6,12 @@
     ?>
 
     <?php 
-    $pages_path = "pages/";
-    ?>
+    require_once 'php/Database.php';
+    $db = Database::getInstance()->getConnection();
 
+    $pages_path = "pages/";
+    $php_path = "php/"
+    ?>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css"> <!-- Bibliotheque css pour nav__close et nav__tooggle -->
@@ -22,6 +25,7 @@
 <!--HEADER-->
     <header class="header" id="header">
         <?php include_once $pages_path . 'menu_nav.html'; ?>
+        <a href="php/admin_page.php">Admin-Page</a>
     </header>
 
 <!-- MAIN -->
@@ -31,10 +35,7 @@
         include_once $pages_path . 'about.html'; 
         include_once $pages_path . 'competences.html'; 
         include_once $pages_path . 'experiences.html'; 
-        include_once $pages_path . 'projets.html'; 
-        include_once $pages_path . 'contact.html'; 
         ?>
-    
     </main>
 
 <!-- FOOTER -->
