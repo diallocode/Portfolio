@@ -1,1 +1,0 @@
-<!-- Faire une boucle pour afficher les projets depuis la base de donnees -->
