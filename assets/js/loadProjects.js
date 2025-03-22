@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Fonction js pour afficher la description et la chargement de plus de projets
 function loadDescription(projectId) {
     const descriptionElement = document.getElementById('description-' + projectId);
 
