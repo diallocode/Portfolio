@@ -2,8 +2,9 @@
 require_once 'php/Database.php';
 $db = Database::getInstance()->getConnection();
 
-$pages_path = "pages/";
+$templates_path = "templates/";
 $php_path = "php/";
+$pages_path = "pages/";
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +18,7 @@ $php_path = "php/";
 <body>
 <!--HEADER-->
 <header class="header" id="header">
-    <?php include_once $pages_path . 'menu_nav.html'; ?>
+    <?php include_once $templates_path . 'menu_nav.php'; ?>
 </header>
 
 <!-- MAIN -->
@@ -30,7 +31,7 @@ $php_path = "php/";
 
 <!-- FOOTER -->
 <footer class="footer">
-    <?php include_once $pages_path . 'footer.html'; ?>
+    <?php include_once $templates_path . 'footer.php'; ?>
 </footer>
 
 <!-- Include the JavaScript file for loading projects -->

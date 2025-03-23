@@ -43,3 +43,8 @@
 .skills__item::marker{
     color:var(--first-color); /* Colorer les numeros de listes*/
 }
+
+.skills__icon {
+    font-size: 2rem;
+    color: var(--first-color);
+}

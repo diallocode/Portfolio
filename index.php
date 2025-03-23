@@ -10,7 +10,7 @@
     $db = Database::getInstance()->getConnection();
 
     $pages_path = "pages/";
-    $php_path = "php/"
+    $templates_path = "templates/"
     ?>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,23 +24,22 @@
 <body>
 <!--HEADER-->
     <header class="header" id="header">
-        <?php include_once $pages_path . 'menu_nav.html'; ?>
-        <a href="php/login.php">Login-Page</a>
+        <?php include_once $templates_path . 'menu_nav.php'; ?>
     </header>
 
 <!-- MAIN -->
     <main class="main">
         <?php 
-        include_once $pages_path . 'home.html'; 
-        include_once $pages_path . 'about.html'; 
-        include_once $pages_path . 'competences.html'; 
-        include_once $pages_path . 'experiences.html'; 
+        include_once $pages_path . 'home.php'; 
+        include_once $pages_path . 'about.php'; 
+        include_once $pages_path . 'competences.php'; 
+        include_once $pages_path . 'experiences.php'; 
         ?>
     </main>
 
 <!-- FOOTER -->
     <footer class="footer">
-        <?php include_once $pages_path . 'footer.html'; ?>
+        <?php include_once $templates_path . 'footer.php'; ?>
     </footer>
 
     <!-- Defilement vers le haut -->
