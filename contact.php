@@ -35,6 +35,7 @@ $php_path = "php/";
 
 <!-- Include the JavaScript file for loading projects -->
 <script src="assets/js/loadProjects.js" defer></script>
-<script src="assets/js/form.js" defer></script>
+<script src="assets/js/contact.js" defer></script>
+<script src="assets/js/search_project.js" defer></script>
 </body>
 </html>
