@@ -37,21 +37,6 @@ const blurlHeader = () =>{
 }
 window.addEventListener('scroll', blurlHeader)
 
- 
-/* EMAIL JS : a changer plus tard pour utiliser du php 
-const contactForm = document.getElementById('contact-form')
-        contactMessage = document.getElementById('contact-message')
-
-const sendEmail = (e) =>{
-    e.preventDefault()
-
-    emailjs.sendEmail('service_1o7u2w9', )
-}
-
-contactForm.addEventListener('submit', sendEmail)
-*/
-
-
 
 // Defilement qui ramene en haut
 const scrollUp = () =>{

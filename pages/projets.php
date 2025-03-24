@@ -1,6 +1,6 @@
 <!-- filepath: /home/barrydiallo/Bureau/prog_web/projet/my_portfolio/pages/projets.php -->
 <?php
-require_once 'Database.php';
+require_once 'php/Database.php';
 $db = Database::getInstance()->getConnection();
 ?>
 

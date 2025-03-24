@@ -24,9 +24,9 @@ $pages_path = "pages/";
 <!-- MAIN -->
 <main class="main">
     <!-- Projects Section -->
-    <?php include_once $php_path . 'projets.php'; ?>
+    <?php include_once $pages_path . 'projets.php'; ?>
     <!-- Contact Section -->
-    <?php include_once $pages_path . 'contact.html'; ?>
+    <?php include_once $pages_path . 'contact.php'; ?>
 </main>
 
 <!-- FOOTER -->

@@ -1,6 +1,7 @@
 
 
 <section class="contact section" id="contact">
+    <link rel="stylesheet" href="../assets/css/styles.css">
     <h3 class="section__subtitle">
         <!--  Get In <span>Touch<span>  -->
     </h3>
