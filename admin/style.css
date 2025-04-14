@@ -1,0 +1,80 @@
+/* Ajoutez ceci dans assets/css/styles.css ou un nouveau fichier CSS */
+.admin-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-page h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.admin-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.admin-page label {
+    font-weight: bold;
+    color: #555;
+}
+
+.admin-page input,
+.admin-page textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.admin-page input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.admin-page input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.project-list {
+    margin-top: 30px;
+}
+
+.project-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.project-list th,
+.project-list td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.project-list th {
+    background-color: #007bff;
+    color: white;
+}
+
+.project-list td a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.project-list td a:hover {
+    text-decoration: underline;
+}
