@@ -34,14 +34,14 @@ $current_page = basename($_SERVER['PHP_SELF']);
             </li>
             <?php if (isset($_SESSION['user_id'])): ?>
                 <li class="nav__item">
-                    <a href="admin.php" class="nav__link <?php echo ($current_page == 'admin.php') ? 'active' : ''; ?>">Se deconnecter</a>
+                    <a href="admin/admin_page.php" class="nav__link <?php echo ($current_page == 'admin/admin_page.php') ? 'active' : ''; ?>">Se deconnecter</a>
                 </li>
                 <li class="nav__item">
-                    <a href="php/logout.php" class="nav__link">Logout</a>
+                    <a href="admin/logout.php" class="nav__link">Logout</a>
                 </li>
             <?php else: ?>
                 <li class="nav__item">
-                    <a href="login.php" class="nav__link <?php echo ($current_page == 'login.php') ? 'active' : ''; ?>">Admin</a>
+                    <a href="admin/login.php" class="nav__link <?php echo ($current_page == 'admin/login.php') ? 'active' : ''; ?>">Admin</a>
                 </li>
             <?php endif; ?>
         </ul>
