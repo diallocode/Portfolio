@@ -5,9 +5,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Mot de pass et username
+    // ⚠️ Pour une vraie appli, utilise une base de données + mot de passe hashé.
     $correct_username = 'admin';
     $correct_password = 'password';
+
+    // Exemple de hash si tu veux utiliser password_verify un jour :
+    // $correct_password_hash = password_hash('password', PASSWORD_DEFAULT);
+    // if ($username === $correct_username && password_verify($password, $correct_password_hash)) { ... }
 
     if ($username === $correct_username && $password === $correct_password) {
         $_SESSION['loggedin'] = true;
@@ -30,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <h1>Login</h1>
     <?php if (isset($error)): ?>
-        <p style="color: red;"><?php echo $error; ?></p>
+        <p style="color: red;"><?php echo htmlspecialchars($error); ?></p>
     <?php endif; ?>
     <form method="POST" action="login.php">
         <label for="username">Username:</label>

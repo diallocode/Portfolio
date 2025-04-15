@@ -1,96 +1,73 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const searchForm = document.getElementById('searchForm');
-    const searchInput = document.getElementById('search');
-    const categorySelect = document.getElementById('category');
-    const projectsContainer = document.getElementById('projectsContainer');
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("search");
+    const projectsContainer = document.getElementById("projectsContainer");
 
-    function fetchProjects() {
-        const search = searchInput.value;
-        const category = categorySelect.value;
+    function searchProjects() {
+        const query = searchInput.value.trim();
 
-        fetch(`php/search_project.php?search=${encodeURIComponent(search)}&category=${encodeURIComponent(category)}`)
-            .then(response => response.json())
-            .then(data => {
-                projectsContainer.innerHTML = '';
-                data.forEach(project => {
-                    const projectCard = document.createElement('article');
-                    projectCard.classList.add('projects__card');
+        if (query.length > 0) {
+            const params = new URLSearchParams();
+            params.append("search", query);
 
-                    if (project.image) {
-                        const img = document.createElement('img');
-                        img.src = project.image;
-                        img.alt = project.name;
-                        img.classList.add('projects__img');
-                        projectCard.appendChild(img);
-                    }
+            fetch("../php/search_project.php?" + params.toString())
+                .then(response => response.json())
+                .then(data => {
+                    projectsContainer.innerHTML = "";
 
-                    const modal = document.createElement('div');
-                    modal.classList.add('projects__modal');
+                    data.forEach(project => {
+                        const projectElement = document.createElement('article');
+                        projectElement.className = 'projects__card';
 
-                    const subtitle = document.createElement('span');
-                    subtitle.classList.add('projects__subtitle');
-                    subtitle.textContent = project.category;
-                    modal.appendChild(subtitle);
+                        if (project.image) {
+                            const img = document.createElement('img');
+                            img.src = project.image;
+                            img.alt = project.name;
+                            img.className = 'projects__img';
+                            projectElement.appendChild(img);
+                        }
 
-                    const title = document.createElement('h2');
-                    title.classList.add('projects__title');
-                    title.textContent = project.name;
-                    modal.appendChild(title);
+                        const modal = document.createElement('div');
+                        modal.className = 'projects__modal';
 
-                    const description = document.createElement('p');
-                    description.classList.add('projects__description-text');
-                    description.id = 'description-' + project.id;
-                    description.style.display = 'none'; // Ensure the description is hidden by default
-                    modal.appendChild(description);
+                        const subtitle = document.createElement('span');
+                        subtitle.className = 'projects__subtitle';
+                        subtitle.textContent = project.category;
 
-                    const showDescriptionButton = document.createElement('button');
-                    showDescriptionButton.classList.add('projects__description');
-                    showDescriptionButton.textContent = 'Voir plus';
-                    showDescriptionButton.onclick = function() {
-                        loadDescription(project.id);
-                    };
-                    modal.appendChild(showDescriptionButton);
+                        const title = document.createElement('h2');
+                        title.className = 'projects__title';
+                        title.textContent = project.name;
 
-                    const link = document.createElement('a');
-                    link.href = project.show_more_link;
-                    link.classList.add('projects__button');
-                    link.innerHTML = 'Git <i class="ri-external-link-line"></i>';
-                    modal.appendChild(link);
+                        const desc = document.createElement('p');
+                        desc.id = `description-${project.id}`;
+                        desc.style.display = 'none';
 
-                    projectCard.appendChild(modal);
-                    projectsContainer.appendChild(projectCard);
+                        const descBtn = document.createElement('button');
+                        descBtn.className = 'projects__description';
+                        descBtn.textContent = 'Voir plus';
+                        descBtn.setAttribute('onclick', `loadDescription(${project.id})`);
+
+                        const link = document.createElement('a');
+                        link.href = project.show_more_link;
+                        link.className = 'projects__button';
+                        link.innerHTML = 'Git <i class="ri-external-link-line"></i>';
+
+                        modal.appendChild(subtitle);
+                        modal.appendChild(title);
+                        modal.appendChild(desc);
+                        modal.appendChild(descBtn);
+                        modal.appendChild(link);
+
+                        projectElement.appendChild(modal);
+                        projectsContainer.appendChild(projectElement);
+                    });
+                })
+                .catch(error => {
+                    console.error('Erreur lors de la recherche de projet :', error);
                 });
-            })
-            .catch(error => console.error('Error fetching projects:', error));
+        } else {
+            projectsContainer.innerHTML = "";
+        }
     }
 
-    searchInput.addEventListener('input', fetchProjects);
-    categorySelect.addEventListener('change', fetchProjects);
+    searchInput.addEventListener("input", searchProjects);
 });
-
-function loadDescription(projectId) {
-    const descriptionElement = document.getElementById('description-' + projectId);
-
-    if (!descriptionElement) {
-        console.error(`Element description-${projectId} non trouvé.`);
-        return;
-    }
-
-    fetch(`php/get_description.php?id=${projectId}`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Problème réseau');
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data && data.description) {
-                descriptionElement.textContent = data.description;
-                descriptionElement.classList.add('projects__description-text');
-                descriptionElement.style.display = 'block';
-            } else {
-                console.error('Aucune description trouvée pour le projet ID:', projectId);
-            }
-        })
-        .catch(error => console.error('Erreur récupération description:', error));
-}

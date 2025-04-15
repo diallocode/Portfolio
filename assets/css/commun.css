@@ -331,6 +331,10 @@ svg{
         padding-block: 7rem 2rem;
     }
 
+    .nav__menu.show-menu {
+        right: 0;
+      }
+
     .section__subtitle{
         font-size: var(--normal-font-size);
     }

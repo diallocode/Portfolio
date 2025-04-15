@@ -68,7 +68,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </thead>
         <tbody>
             <?php
-            $stmt = $db->query("SELECT * FROM projects");
+            $stmt = $db->prepare("SELECT * FROM projects");
+            $stmt->execute();
             while ($project = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 echo "<tr>";
                 echo "<td>" . htmlspecialchars($project['id']) . "</td>";
