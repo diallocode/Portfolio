@@ -38,5 +38,8 @@ $pages_path = "pages/";
 <script src="assets/js/loadProjects.js" defer></script>
 <script src="assets/js/contact.js" defer></script>
 <script src="assets/js/search_project.js" defer></script>
+<script src="assets/js/scrollreveal.min.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+
 </body>
 </html>

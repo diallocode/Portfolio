@@ -10,7 +10,7 @@
     $db = Database::getInstance()->getConnection();
 
     $pages_path = "pages/";
-    $templates_path = "templates/"
+    $templates_path = "templates/";
     ?>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,9 +47,7 @@
         <i class="ri-arrow-up-line"></i>
      </a>
 
-    <!-- EMAIL JS : a changer plus tard pour utiliser du php -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
+    
     <!-- ScrollReveal JS -->
     <script src="assets/js/scrollreveal.min.js" defer></script>
   
