@@ -1,4 +1,3 @@
-<!-- filepath: /home/barrydiallo/Bureau/prog_web/projet/my_portfolio/pages/projets.php -->
 <?php
 require_once 'php/Database.php';
 $db = Database::getInstance()->getConnection();
@@ -16,18 +15,12 @@ $db = Database::getInstance()->getConnection();
     <!-- 🔍 Formulaire de recherche -->
     <form id="searchForm" class="search__form">
         <input type="text" id="search" placeholder="🔍 Rechercher un projet..." class="search__input">
-        <select id="category" class="search__select">
-            <option value="">Toutes catégories</option>
-            <option value="langage c">Langage C</option>
-            <option value="web">Web</option>
-            <option value="python">Python</option>
-            <option value="vmware">VMware</option>
-        </select>
     </form>
 
-    <div class="projects__container container grid" id = "projectsContainer">
-    <?php
-        $stmt = $db->query("SELECT * FROM projects LIMIT 3");
+    <div class="projects__container container grid" id="projectsContainer">
+        <?php
+        $stmt = $db->prepare("SELECT * FROM projects LIMIT 3");
+        $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<article class='projects__card'>";
             if (!empty($row['image'])) {
