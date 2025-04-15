@@ -1,6 +1,6 @@
 <?php
 session_start();
-$current_page = basename($_SERVER['PHP_SELF']);
+$current_page = htmlspecialchars(basename($_SERVER['PHP_SELF']));
 ?>
 
 <nav class="nav container">

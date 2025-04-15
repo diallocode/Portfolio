@@ -1,5 +1,4 @@
 
-
 <div class="footer__container container grid">
     <div>
         <h1 class="footer__title">
