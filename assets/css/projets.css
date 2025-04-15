@@ -142,6 +142,20 @@
     background-color: #0056b3;
 }
 
+.nav__lang {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.nav__lang a {
+    transition: transform 0.3s;
+}
+
+.nav__lang a:hover {
+    transform: scale(1.1);
+}
+
 
 
 @media (max-width: 768px) {

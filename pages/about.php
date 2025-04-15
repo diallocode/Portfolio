@@ -1,4 +1,12 @@
+<?php
+session_start();
 
+// Définir la langue par défaut
+$lang = $_SESSION['lang'] ?? 'en'; // Langue par défaut : anglais
+
+// Charger les traductions
+$tr = include __DIR__ . '/../lang/' . $lang . '.php';
+?>
 
 <section class="about section" id="about">
     <div class="about__container container container grid">
