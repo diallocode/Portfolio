@@ -5,7 +5,6 @@ $tr = include __DIR__ . '/../lang/' . $lang . '.php';
 ?>
 
 <section class="contact section" id="contact">
-    <link rel="stylesheet" href="../assets/css/styles.css">
     
     <h3 class="section__subtitle">
         <?= $tr['get_in'] ?? '' ?> <span><?= $tr['touch'] ?? '' ?></span>
