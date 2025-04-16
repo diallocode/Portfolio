@@ -24,7 +24,7 @@ $tr = include __DIR__ . '/../lang/' . $lang . '.php';
             <li class="nav__item"><a href="more.php#about" class="nav__link"><?= $tr['about'] ?></a></li>
             <li class="nav__item"><a href="index.php#skills" class="nav__link"><?= $tr['skills'] ?></a></li>
             <li class="nav__item"><a href="index.php#service" class="nav__link"><?= $tr['service'] ?? 'Service' ?></a></li>
-            <li class="nav__item"><a href="more.php#projets" class="nav__link"><?= $tr['projects'] ?></a></li>
+            <li class="nav__item"><a href="more.php#projects" class="nav__link"><?= $tr['projects'] ?></a></li>
             <li class="nav__item"><a href="more.php#contact" class="nav__link"><?= $tr['contact'] ?></a></li>
 
             <?php if (isset($_SESSION['user_id'])): ?>
@@ -55,7 +55,7 @@ $tr = include __DIR__ . '/../lang/' . $lang . '.php';
             </li>
         </ul>
 
-        <!-- Fermeture du menu mobile -->
+        <!-- Fermeture du menu menu -->
         <div class="nav__close" id="nav-close">
             <i class="ri-close-line"></i>
         </div>
