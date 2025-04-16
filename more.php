@@ -41,6 +41,11 @@ $pages_path = "pages/";
     <?php include_once $templates_path . 'footer.php'; ?>
 </footer>
 
+ <!-- Scroll to top -->
+<a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-line"></i>
+</a>
+
 <!-- JS -->
 <script src="assets/js/loadProjects.js" defer></script>
 <script src="assets/js/contact.js" defer></script>
