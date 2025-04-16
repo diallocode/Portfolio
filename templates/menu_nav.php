@@ -3,7 +3,7 @@ session_start();
 $current_page = htmlspecialchars(basename($_SERVER['PHP_SELF']));
 
 // Charger la langue
-$lang = $_SESSION['lang'] ?? 'fr';
+$lang = $_SESSION['lang'] ?? 'en'; // langue par defaut
 $tr = include __DIR__ . '/../lang/' . $lang . '.php';
 ?>
 
@@ -21,11 +21,11 @@ $tr = include __DIR__ . '/../lang/' . $lang . '.php';
     <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
             <li class="nav__item"><a href="index.php#home" class="nav__link"><?= $tr['home'] ?></a></li>
-            <li class="nav__item"><a href="index.php#about" class="nav__link"><?= $tr['about'] ?></a></li>
+            <li class="nav__item"><a href="more.php#about" class="nav__link"><?= $tr['about'] ?></a></li>
             <li class="nav__item"><a href="index.php#skills" class="nav__link"><?= $tr['skills'] ?></a></li>
             <li class="nav__item"><a href="index.php#service" class="nav__link"><?= $tr['service'] ?? 'Service' ?></a></li>
-            <li class="nav__item"><a href="contact.php#projets" class="nav__link"><?= $tr['projects'] ?></a></li>
-            <li class="nav__item"><a href="contact.php#contact" class="nav__link"><?= $tr['contact'] ?></a></li>
+            <li class="nav__item"><a href="more.php#projets" class="nav__link"><?= $tr['projects'] ?></a></li>
+            <li class="nav__item"><a href="more.php#contact" class="nav__link"><?= $tr['contact'] ?></a></li>
 
             <?php if (isset($_SESSION['user_id'])): ?>
                 <li class="nav__item">

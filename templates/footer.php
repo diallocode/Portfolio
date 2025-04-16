@@ -1,12 +1,21 @@
+<?php
+session_start();
+
+// Définir la langue par défaut
+$lang = $_SESSION['lang'] ?? 'en'; // Langue par défaut : anglais
+
+// Charger les traductions
+$tr = include __DIR__ . '/../lang/' . $lang . '.php';
+?>
 
 <div class="footer__container container grid">
     <div>
         <h1 class="footer__title">
-            Mamadou Tanou <span>Diallo<span>
+            Mamadou Tanou <span>Diallo</span>
         </h1>
 
         <h2 class="footer__education">
-            Etudiant en Informatique
+            <?= $tr['student_in_computer_science'] ?>
         </h2>
     </div>
 
@@ -21,6 +30,6 @@
     </div>
 
     <span class="footer__copy">
-        &#169; Copyright Diallo. Tout droit reservés
+        &#169; <?= $tr['copyright'] ?>
     </span>
 </div>

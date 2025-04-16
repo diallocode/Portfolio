@@ -2,7 +2,7 @@
 
 
 .footer{
-    background-color: var(--container-color);
+    background-color: hsl(228deg 26.43% 41.84%);
     padding-block: 3.5rem 2rem;
 }
 

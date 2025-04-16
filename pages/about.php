@@ -1,10 +1,6 @@
 <?php
 session_start();
-
-// Définir la langue par défaut
-$lang = $_SESSION['lang'] ?? 'en'; // Langue par défaut : anglais
-
-// Charger les traductions
+$lang = $_SESSION['lang'] ?? 'en';
 $tr = include __DIR__ . '/../lang/' . $lang . '.php';
 ?>
 
@@ -12,55 +8,50 @@ $tr = include __DIR__ . '/../lang/' . $lang . '.php';
     <div class="about__container container container grid">
         <div class="about__data">
             <h3 class="section__subtitle">
-                My <span>Intro</span>
+                <?= $tr['my'] ?? 'My' ?> <span><?= $tr['intro'] ?? 'Intro' ?></span>
             </h3>
 
             <h2 class="section__title">
-                About Me
+                <?= $tr['about_me'] ?? 'About Me' ?>
             </h2>
 
             <p class="about__description">
-                Curieux et passionné par l'informatique, je me forme continuellement aux domaines de la cybersécurité et des réseaux
-                en parallèle de mes études universitaires. 
-                Découvrez mon parcours ainsi que mes occupations pendant mon temps libre.
+                <?= $tr['about_description'] ?? "Curieux et passionné par l'informatique, je me forme continuellement aux domaines de la cybersécurité et des réseaux en parallèle de mes études universitaires. Découvrez mon parcours ainsi que mes occupations pendant mon temps libre." ?>
             </p>
 
             <div class="tab__section">
-                <p class="about__links active-links" onclick="opentab('educations', event)">Educations</p>
-                <p class="about__links" onclick="opentab('certification', event)">Certifications</p>
-                <p class="about__links" onclick="opentab('hobbies', event)">Hobbies</p>
-
+                <p class="about__links active-links" onclick="opentab('educations', event)"><?= $tr['educations'] ?? 'Educations' ?></p>
+                <p class="about__links" onclick="opentab('certification', event)"><?= $tr['certifications'] ?? 'Certifications' ?></p>
+                <p class="about__links" onclick="opentab('hobbies', event)"><?= $tr['hobbies'] ?? 'Hobbies' ?></p>
             </div>
 
             <div class="liste__contents active-tab" id="educations">
                 <ul>
-                    <li><span>2024 - 2025</span><br>2ᵉ année de Licence Informatique </li>
-                    <li><span>2023 - 2024 </span><br>1ʳᵉ année de Licence Informatique</li>
-                    <li><span>2022 - 2023</span><br>1ʳᵉ année de Licence Mathématiques </li>
+                    <li><span>2024 - 2025</span><br><?= $tr['licence_info_2'] ?? '2ᵉ année de Licence Informatique' ?></li>
+                    <li><span>2023 - 2024</span><br><?= $tr['licence_info_1'] ?? '1ʳᵉ année de Licence Informatique' ?></li>
+                    <li><span>2022 - 2023</span><br><?= $tr['licence_math'] ?? '1ʳᵉ année de Licence Mathématiques' ?></li>
                 </ul>
             </div>
 
             <div class="liste__contents" id="certification">
                 <ul>
-                    <li><span>Udemy : 2025</span><br>Complete Ethical Hacking </li>
-                    <li><span>Cybrary : 2024 </span><br>IP adressing basics</li>
-                    <li><span>Pix : 2023</span><br>Certification des compétences numériques</li>
+                    <li><span>Udemy : 2025</span><br><?= $tr['cert_eth_hacking'] ?? 'Complete Ethical Hacking' ?></li>
+                    <li><span>Cybrary : 2024</span><br><?= $tr['cert_ip_addressing'] ?? 'IP adressing basics' ?></li>
+                    <li><span>Pix : 2023</span><br><?= $tr['cert_competences'] ?? 'Certification des compétences numériques' ?></li>
                 </ul>
             </div>
 
             <div class="liste__contents" id="hobbies">
                 <ul>
-                    <li><span>Culture</span><br>Lectures</li>
-                    <li><span>Cinema</span><br>Anime</li>
-                    <li><span>Jeu</span><br>Echecs</li>
+                    <li><span><?= $tr['culture'] ?? 'Culture' ?></span><br><?= $tr['lectures'] ?? 'Lectures' ?></li>
+                    <li><span><?= $tr['cinema'] ?? 'Cinema' ?></span><br><?= $tr['anime'] ?? 'Anime' ?></li>
+                    <li><span><?= $tr['game'] ?? 'Jeu' ?></span><br><?= $tr['chess'] ?? 'Echecs' ?></li>
                 </ul>
             </div>
-
-            
         </div>
 
         <div class="about__image">
-            <svg class="about__blob" viewBox="0 0 550 592" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="about__blob" viewBox="0 0 550 592" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <mask id="maskBorder" mask-type="alpha">
                    <path d="M263 48.1782C270.426 43.891 279.574 43.891 287 48.1782L501.157 
                    171.822C508.583 176.109 513.157 184.032 513.157 192.606V439.894C513.157 

@@ -1,21 +1,23 @@
+<?php
+session_start();
+$lang = $_SESSION['lang'] ?? 'en';
+$tr = include __DIR__ . '/lang/' . $lang . '.php';
+
+require_once 'php/Database.php';
+$db = Database::getInstance()->getConnection();
+
+$pages_path = "pages/";
+$templates_path = "templates/";
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?= $lang ?>">
 <head>
-    <?php 
-    header('Content-Type: text/html; charset=UTF-8');
-    ?>
-
-    <?php 
-    require_once 'php/Database.php';
-    $db = Database::getInstance()->getConnection();
-
-    $pages_path = "pages/";
-    $templates_path = "templates/";
-    ?>
-
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css"> <!-- Bibliotheque css pour nav__close et nav__tooggle -->
-    <!-- import des fichier css -->
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 
     <title>my_portfolio</title>
@@ -31,9 +33,8 @@
     <main class="main">
         <?php 
         include_once $pages_path . 'home.php'; 
-        include_once $pages_path . 'about.php'; 
-        include_once $pages_path . 'competences.php'; 
         include_once $pages_path . 'experiences.php'; 
+        include_once $pages_path . 'competences.php'; 
         ?>
     </main>
 
@@ -42,17 +43,12 @@
         <?php include_once $templates_path . 'footer.php'; ?>
     </footer>
 
-    <!-- Defilement vers le haut -->
-     <a href="#" class="scrollup" id="scroll-up">
+    <!-- Scroll to top -->
+    <a href="#" class="scrollup" id="scroll-up">
         <i class="ri-arrow-up-line"></i>
-     </a>
+    </a>
 
-    
-    <!-- ScrollReveal JS -->
     <script src="assets/js/scrollreveal.min.js" defer></script>
-  
-    <!-- MAIN JS -->
     <script src="assets/js/main.js" defer></script>
-
 </body>
 </html>

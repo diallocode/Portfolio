@@ -1,49 +1,33 @@
+<?php
+session_start();
+$lang = $_SESSION['lang'] ?? 'en';
+$tr = include __DIR__ . '/../lang/' . $lang . '.php';
+?>
 
 <section class="home section" id="home">
     <div class="home__container container grid">
         <div class="home__content">
             <div class="home__data">
-                <h3 class="home__subtitle">
-                    Bonjour, <span>je suis</span>
-                </h3>
+                <h3 class="home__subtitle"><?= $tr['hello'] ?? 'Bonjour,' ?></h3>
+                <h1 class="home__title"><?= $tr['my_name'] ?? 'Je suis Mamadou Tanou Diallo' ?></h1>
+                <h3 class="home__education"><?= $tr['student_info'] ?? 'Étudiant en Informatique' ?></h3>
+                <p class="home__description"><?= $tr['home_description'] ?? 'Passionné par la cybersécurité, le développement web et les réseaux, je suis toujours motivé pour apprendre de nouvelles technologies et relever de nouveaux défis.' ?></p>
 
-                <h1 class="home__title">
-                   Mamadou Tanou Diallo
-                </h1>
-
-                <h3 class="home__education">Etudiant en Informatique</h3>
-
-                <p class="home__description">
-                    Actuellement en 2ᵉ année de licence d’informatique à l’Université de Strasbourg,
-                    je me spécialise dans la cybersécurité et les réseaux. Ma première année en licence 
-                    de mathématiques m’a permis d’acquérir une approche analytique et rigoureuse pour résoudre 
-                    des problèmes complexes.
-                </p>
-
-                <a href="#" class="button">CV</a>
+                <a href="#contact" class="button contact__button"><?= $tr['contact_me'] ?? 'Contactez-moi' ?></a>
             </div>
 
             <div class="home__social">
-                <a href="https://www.linkdIn.com" target="_blank" class="home__social-link">
-                    <i class="ri-linkedin-box-line"></i>
+                <a href="https://www.facebook.com" target="_blank" class="home__social-link">
+                    <i class="ri-facebook-line"></i>
                 </a>
-
-                <a href="https://facebook.com" target="_blank" class="home__social-link">
-                    <i class="ri-facebook-box-line"></i>
-                </a>
-
-                <a href="https://gitlab.com" target="_blank" class="home__social-link">
-                    <i class="ri-gitlab-line"></i>
-                </a>
-
-                <a href="https://discord.com" target="_blank" class="home__social-link">
-                    <i class="ri-discord-line"></i>
+                <a href="https://www.instagram.com" target="_blank" class="home__social-link">
+                    <i class="ri-instagram-line"></i>
                 </a>
             </div>
         </div>
 
-        <!-- Image de progile du site avec son code svg -->
-        <div class="home__image">
+         <!-- Image de progile du site avec son code svg -->
+         <div class="home__image">
             <svg class="home__blob" viewBox="0 0 550 591" xmlns="http://www.w3.org/2000/svg">
                 <mask id="maskBlob" mask-type="alpha">
                    <path d="M263 47.1782C270.426 42.891 279.574 42.891 287 47.1782L501.157 
