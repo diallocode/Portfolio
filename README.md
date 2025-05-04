@@ -8,18 +8,19 @@ Bienvenue sur mon portfolio personnel, développé dans le cadre d’un projet u
 
 Le projet est organisé comme suit :
 
-my_portfolio/ 
-            ├── assets/ # Fichiers CSS, JS, images 
-            ├── lang/ # Fichiers de traduction (FR, EN) 
-            ├── pages/ # Pages principales du site (home, compétences, projets, etc.) 
-            ├── templates/ # Templates réutilisables (header, footer, menu) 
-            ├── php/ # Scripts PHP (connexion à la base de données, traitement des formulaires) 
-            ├── Public/ # Fichiers publics (CV, autres ressources) 
-            ├── Admin/ # contient les fichiers de la page d'administration pour ajouter et supprimer des projets
-└── more.php  # Point d'entrée principal
-└── index.php # Point d'entrée principal
+```plaintext
+my_portfolio/
+├── assets/        # Fichiers CSS, JS, images
+├── lang/          # Fichiers de traduction (FR, EN)
+├── pages/         # Pages principales (home, compétences, projets, etc.)
+├── templates/     # Templates réutilisables (header, footer, menu)
+├── php/           # Scripts PHP (connexion BDD, traitements)
+├── Public/        # Ressources publiques (CV, documents)
+├── Admin/         # contient les fichiers de la page d'administration pour ajouter et supprimer des projets
+└── more.php       # Point d'entrée principal
+└── index.php      # Point d’entrée principal
+```
 
----
 
 ## 🚀 Lancer le projet
 
