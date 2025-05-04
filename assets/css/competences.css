@@ -48,3 +48,9 @@
     font-size: 2rem;
     color: var(--first-color);
 }
+
+.skills__group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+    gap: 2rem; /* Espacement entre les éléments */
+}

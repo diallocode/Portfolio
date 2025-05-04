@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 $lang = $_SESSION['lang'] ?? 'en';
 $tr = include __DIR__ . '/../lang/' . $lang . '.php';
 ?>
@@ -38,7 +40,7 @@ $tr = include __DIR__ . '/../lang/' . $lang . '.php';
                 <i class="ri-phone-line"></i>
                 <div>
                     <h3><?= $tr['phone'] ?? 'Téléphone' ?></h3>
-                    <p>+33 6 12 34 56 78</p>
+                    <p>+33 6 03 20 94 59</p>
                 </div>
             </div>
         </div>

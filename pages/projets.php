@@ -2,7 +2,9 @@
 require_once 'php/Database.php';
 $db = Database::getInstance()->getConnection();
 
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 $lang = $_SESSION['lang'] ?? 'en';
 $tr = include __DIR__ . '/../lang/' . $lang . '.php';
 ?>
@@ -31,10 +33,8 @@ $tr = include __DIR__ . '/../lang/' . $lang . '.php';
                 echo "<img src='" . htmlspecialchars($row['image']) . "' alt='" . htmlspecialchars($row['name']) . "' class='projects__img'>";
             }
             echo "<div class='projects__modal'>";
-            echo "<span class='projects__subtitle'>" . htmlspecialchars($row['category']) . "</span>";
             echo "<h2 class='projects__title'>" . htmlspecialchars($row['name']) . "</h2>";
             echo "<p id='description-" . htmlspecialchars($row['id']) . "' style='display: none;'></p>";
-            echo "<button class='projects__description' onclick='loadDescription(" . htmlspecialchars($row['id']) . ")'>" . ($tr['see_more'] ?? 'Voir plus') . "</button>";
             echo "<a href='" . htmlspecialchars($row['show_more_link']) . "' class='projects__button'>Git <i class='ri-external-link-line'></i></a>";
             echo "</div>";
             echo "</article>";

@@ -1,6 +1,6 @@
 # 🌐 Portfolio - Mamadou Tanou Diallo
 
-Bienvenue sur mon portfolio personnel, développé dans le cadre d’un projet universitaire. Ce site met en avant mes compétences en développement web, cybersécurité, et gestion de projet, tout en respectant les bonnes pratiques de sécurité et d’accessibilité.
+Bienvenue sur mon portfolio personnel, développé dans le cadre d’un projet universitaire. Ce site met en avant mes compétences en développement web, et gestion de projet, tout en respectant les bonnes pratiques de sécurité et d’accessibilité.
 
 ---
 
@@ -27,18 +27,9 @@ Bienvenue sur mon portfolio personnel, développé dans le cadre d’un projet u
 
 - HTML5 / CSS3 / JavaScript (ES6)
 - PHP 8 avec PDO
-- SQL (MySQL / MariaDB)
+- SQL (MySQl)
 - Aucun framework externe
 - Aucune bibliothèque JS tierce (hors Remixicon et ScrollReveal)
-
----
-
-## ⚙️ Recommandations de déploiement
-
-- Serveur local recommandé : XAMPP / MAMP / WAMP
-- Dossier du projet placé dans `htdocs/`
-- Assurez-vous d'importer le fichier `.sql` si vous utilisez une base
-- Utilisez un navigateur moderne (Chrome, Firefox, Edge)
 
 ---
 
@@ -53,3 +44,7 @@ Bienvenue sur mon portfolio personnel, développé dans le cadre d’un projet u
 ## 📝 Licence
 
 Ce projet est à usage pédagogique. Toute réutilisation à des fins professionnelles ou commerciales nécessite une autorisation.
+
+
+php -S localhost:8000
+

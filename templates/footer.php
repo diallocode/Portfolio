@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 // Définir la langue par défaut
 $lang = $_SESSION['lang'] ?? 'en'; // Langue par défaut : anglais

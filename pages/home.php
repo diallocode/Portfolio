@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 $lang = $_SESSION['lang'] ?? 'en';
 $tr = include __DIR__ . '/../lang/' . $lang . '.php';
 ?>
@@ -13,16 +15,10 @@ $tr = include __DIR__ . '/../lang/' . $lang . '.php';
                 <h3 class="home__education"><?= $tr['student_info'] ?? 'Étudiant en Informatique' ?></h3>
                 <p class="home__description"><?= $tr['home_description'] ?? 'Passionné par la cybersécurité, le développement web et les réseaux, je suis toujours motivé pour apprendre de nouvelles technologies et relever de nouveaux défis.' ?></p>
 
-                <a href="#contact" class="button contact__button"><?= $tr['contact_me'] ?? 'Contactez-moi' ?></a>
-            </div>
-
-            <div class="home__social">
-                <a href="https://www.facebook.com" target="_blank" class="home__social-link">
-                    <i class="ri-facebook-line"></i>
-                </a>
-                <a href="https://www.instagram.com" target="_blank" class="home__social-link">
-                    <i class="ri-instagram-line"></i>
-                </a>
+               <!-- Bouton pour télécharger le CV -->
+               <a href="/Public/Mamadou_Tanou_DIALLO_CV-1.pdf" class="button cv__button">
+                <?= $tr['download_cv'] ?? 'Voir mon CV' ?>
+            </a>
             </div>
         </div>
 
