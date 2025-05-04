@@ -1,6 +1,6 @@
 # 🌐 Portfolio - Mamadou Tanou Diallo
 
-Bienvenue sur mon portfolio personnel, développé dans le cadre d’un projet universitaire. Ce site met en avant mes compétences en développement web, et gestion de projet, tout en respectant les bonnes pratiques de sécurité et d’accessibilité.
+Bienvenue sur mon portfolio personnel, développé dans le cadre d’un projet universitaire. Ce site met en avant mes compétences en développement web et gestion de projet, tout en respectant les bonnes pratiques de sécurité et d’accessibilité.
 
 ---
 
@@ -71,10 +71,15 @@ Mettez à jour les informations de connexion dans php/Database.php.
 
 ---
 
+## 📧 Contact
+
+- **Email** : tanoudialo04@gmail.com
+- **LinkedIn** : https://www.linkedin.com/in/mamadou-tanou-diallo-56470b285/
+
+
 ## 📝 Licence
 
 Ce projet est à usage pédagogique. Toute réutilisation à des fins professionnelles ou commerciales nécessite une autorisation.
 
 
-php -S localhost:8000
 
