@@ -124,24 +124,6 @@
     margin-top: 40px; /* Espace au-dessus du bouton */
 }
 
-.projects__more {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    transition: 0.3s; /* Animation fluide */
-}
-
-.projects__more:hover {
-    background-color: #0056b3;
-}
-
 .nav__lang {
     display: flex;
     align-items: center;

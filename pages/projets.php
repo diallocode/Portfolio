@@ -43,6 +43,6 @@ $tr = include __DIR__ . '/../lang/' . $lang . '.php';
     </div>
 
     <div class="projects__more-container">
-        <button id="showMoreProjects" class="projects__more"><?= $tr['see_more_projects'] ?? 'Voir plus de projets' ?></button>
+        <button id="showMoreProjects" class="projects__more button"><?= $tr['see_more_projects'] ?? 'Voir plus de projets' ?></button>
     </div>
 </section>
