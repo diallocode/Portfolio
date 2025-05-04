@@ -8,15 +8,15 @@ Bienvenue sur mon portfolio personnel, développé dans le cadre d’un projet u
 
 Le projet est organisé comme suit :
 
-```plaintext my_portfolio/ ├── assets/ # Fichiers CSS, JS, images ├── lang/ # Fichiers de traduction (FR, EN) ├── pages/ # Pages principales (home, compétences, projets, etc.) ├── templates/ # Templates réutilisables (footer, menu) ├── php/ # Scripts PHP (connexion BDD, traitements) ├── Public/ # Ressources publiques (CV) └── index.php  └── more.php # Point d’entrée principal ``` </pre>
-
 my_portfolio/ 
-              ├── assets/ # Fichiers CSS, JS, images 
-              ├── lang/ # Fichiers de traduction (FR, EN) 
-              ├── pages/ # Pages principales du site (home, compétences, projets, etc.) 
-              ├── templates/ # Templates réutilisables (header, footer, menu) 
-              ├── php/ # Scripts PHP (connexion à la base de données, traitement des formulaires) 
-              ├── Public/ # Fichiers publics (CV, autres ressources) 
+            ├── assets/ # Fichiers CSS, JS, images 
+            ├── lang/ # Fichiers de traduction (FR, EN) 
+            ├── pages/ # Pages principales du site (home, compétences, projets, etc.) 
+            ├── templates/ # Templates réutilisables (header, footer, menu) 
+            ├── php/ # Scripts PHP (connexion à la base de données, traitement des formulaires) 
+            ├── Public/ # Fichiers publics (CV, autres ressources) 
+            ├── Admin/ # contient les fichiers de la page d'administration pour ajouter et supprimer des projets
+└── more.php  # Point d'entrée principal
 └── index.php # Point d'entrée principal
 
 ---
@@ -39,6 +39,10 @@ Mettez à jour les informations de connexion dans php/Database.php.
 
 5. Ouvrez votre navigateur et accédez à :
     http://localhost:8000
+
+## Mot de passe pour le menu admin 
+    username : tanou
+    password : diallo
 
 
 ## 🧩 Fonctionnalités
