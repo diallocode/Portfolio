@@ -78,7 +78,7 @@ return [
     'cert_eth_hacking' => 'Complete Ethical Hacking (Udemy)',
     'cert_ip_addressing' => 'IP Addressing Basics (Cybrary)',
     'bac' => 'Hight School',
-    'option' => 'Mathematical Sciences',
+    'options' => 'Mathematical Sciences',
 
 
     // === SECTION: EXPERIENCES ===
