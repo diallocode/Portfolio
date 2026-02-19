@@ -30,8 +30,8 @@
 
 .active-tab {
     background-color: var(--first-color);
-    color: #fff; /* Texte blanc sur fond bleu */
-    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4); /* Lueur bleue */
+    color: #fff; 
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4); 
 }
 
 .about__tab i {

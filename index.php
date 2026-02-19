@@ -16,7 +16,7 @@ $templates_path = "templates/";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Mamadou Tanou Diallo | Développeur Fullstack & Cyber</title>
+    <title>Mamadou Tanou Diallo</title>
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22></text></svg>">
     
@@ -31,13 +31,13 @@ $templates_path = "templates/";
 
     <main class="main">
         <?php 
-        // 1. Accueil
+        // Accueil
         include_once $pages_path . 'home.php'; 
 
-        // 2. Projets (Déplacé ici pour la visibilité)
+        // Projets 
         include_once $pages_path . 'projets.php'; 
         
-        // 3. Compétences (Logique avant les projets)
+        // Compétences 
         include_once $pages_path . 'competences.php'; 
         ?>
     </main>

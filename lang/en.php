@@ -18,7 +18,7 @@ return [
     'download_cv' => 'Download Resume',
     'view_projects' => 'see my projects',
 
-    // === SECTION TITLES (Cyber Style 01, 02...) ===
+    // === SECTION TITLES ===
     'subtitle_01' => '<span>02.</span> Stack',
     'title_01' => 'Technical Expertise',
     

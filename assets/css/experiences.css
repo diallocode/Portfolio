@@ -67,12 +67,12 @@
     transform: translate(0, -7px);
 }
 
-/* Astuce : Sur mobile, on met tout à droite de la ligne */
+
 @media screen and (max-width: 576px) {
     .experience__data {
         grid-template-columns: max-content 1fr;
     }
     .experience__data > div:first-child {
-        display: none; /* Cache la colonne vide de gauche */
+        display: none; 
     }
 }

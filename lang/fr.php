@@ -18,7 +18,7 @@ return [
     'download_cv' => 'Télécharger mon CV',
     'view_projects' => 'Voir mes projets',
 
-    // === TITRES DES SECTIONS (Style Cyber 01, 02...) ===
+    // === TITRES DES SECTIONS ===
     'subtitle_01' => '<span>02.</span> Stack',
     'title_01' => 'Expertise Technique',
     

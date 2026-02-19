@@ -1,7 +1,7 @@
 .home__container {
     min-height: 80vh; /* Prend presque tout l'écran */
     display: grid;
-    grid-template-columns: 1fr 400px; /* Texte à gauche, image à droite */
+    grid-template-columns: 1fr 400px;
     align-items: center;
     gap: 4rem;
 }
@@ -21,7 +21,7 @@
 }
 
 .home__title span {
-    color: var(--text-color); /* Le nom en couleur plus neutre */
+    color: var(--text-color); 
 }
 
 .home__education {
@@ -51,15 +51,15 @@
     height: 100%;
     object-fit: cover;
     border-radius: var(--border-radius);
-    filter: grayscale(100%) contrast(1.2); /* Effet N&B classe */
+    filter: grayscale(100%) contrast(1.2); 
     transition: 0.3s;
-    /* Le décalage */
+   
     top: -20px;
     left: -20px;
     border: 2px solid var(--body-color);
 }
 
-/* Au survol, l'image prend des couleurs et se remet en place */
+
 .home__image-wrapper:hover img {
     filter: none;
     top: -10px;
@@ -68,9 +68,9 @@
 
 @media screen and (max-width: 968px) {
     .home__container {
-        grid-template-columns: 1fr; /* Une seule colonne */
+        grid-template-columns: 1fr; 
         text-align: center;
-        justify-items: center; /* Centre l'image */
+        justify-items: center; 
         padding-top: 5rem;
     }
     .home__description { margin-inline: auto; }

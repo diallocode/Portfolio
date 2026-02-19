@@ -4,7 +4,7 @@
     gap: 2.5rem;
     grid-template-columns: 1fr;
     justify-content: center;
-    margin-bottom: 3rem; /* Ajout d'une marge sous la grille pour pousser le bouton */
+    margin-bottom: 3rem; 
 }
 
 /* --- CARTE PROJET --- */
@@ -28,11 +28,11 @@
 /* --- ZONE IMAGE (HAUT) --- */
 .projects__image-box {
     width: 100%;
-    height: 220px; /* Un peu plus grand pour bien voir l'image */
+    height: 220px; 
     overflow: hidden;
     position: relative;
     border-bottom: 1px solid rgba(100, 255, 218, 0.1);
-    flex-shrink: 0; /* Empêche l'image de rétrécir si le texte est long */
+    flex-shrink: 0; 
 }
 
 .projects__img {
@@ -73,9 +73,9 @@
     margin-bottom: 1.5rem;
     line-height: 1.6;
     
-    /* MODIFICATION ICI : On augmente la limite de lignes */
+    
     display: -webkit-box;
-    -webkit-line-clamp: 8; /* Affiche jusqu'à 8 lignes (beaucoup plus long) */
+    -webkit-line-clamp: 8; /* Affiche jusqu'à 8 lignes */
     -webkit-box-orient: vertical;
     overflow: hidden;
     

@@ -27,13 +27,13 @@ $pages_path = "pages/";
 
     <main class="main">
         <?php 
-        // 1. A propos
+        //  A propos
         include_once $pages_path . 'about.php'; 
         
-        // 2. Expériences (Déplacé ici)
+        // Expériences 
         include_once $pages_path . 'experiences.php'; 
 
-        // 3. Contact
+        // Contact
         include_once $pages_path . 'contact.php'; 
         ?>
     </main>

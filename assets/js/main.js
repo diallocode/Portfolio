@@ -75,7 +75,6 @@ if (typeof ScrollReveal !== 'undefined') {
         distance: '60px',
         duration: 2500,
         delay: 400,
-        // reset: true // Animations repeat (optionnel, souvent mieux à false pour un portfolio)
     })
 
     // --- HOME ---
@@ -91,7 +90,6 @@ if (typeof ScrollReveal !== 'undefined') {
     sr.reveal(`.skills__transverse`, {origin: 'right'})
     
     // --- PROJECTS ---
-    // L'intervalle crée un effet de cascade (les cartes apparaissent une par une)
     sr.reveal(`.projects__card`, {interval: 200}) 
 
     // --- ABOUT / EDUCATION ---

@@ -1,15 +1,15 @@
 /* --- FOOTER GLOBAL --- */
 .footer {
     background-color: var(--body-color); /* Fond principal sombre */
-    border-top: 1px solid rgba(100, 255, 218, 0.1); /* Ligne néon très subtile */
+    border-top: 1px solid rgba(100, 255, 218, 0.1); 
     padding-block: 4rem 2rem;
-    margin-top: auto; /* Pousse le footer tout en bas si la page est courte */
+    margin-top: auto; 
 }
 
 .footer__container {
     display: grid;
     gap: 3rem;
-    grid-template-columns: 1fr; /* Mobile first */
+    grid-template-columns: 1fr; 
 }
 
 /* --- LOGO & DESCRIPTION --- */
@@ -19,7 +19,7 @@
     color: var(--first-color);
     margin-bottom: 1rem;
     display: inline-block;
-    font-family: monospace; /* Touche Tech */
+    font-family: monospace; 
 }
 
 .footer__logo span {
@@ -52,12 +52,12 @@
     font-size: var(--small-font-size);
     transition: 0.3s;
     width: fit-content;
-    font-family: monospace; /* Touche Tech */
+    font-family: monospace; 
 }
 
 .footer__link:hover {
     color: var(--first-color);
-    transform: translateX(5px); /* Petite flèche vers la droite */
+    transform: translateX(5px); 
 }
 
 /* --- RÉSEAUX SOCIAUX --- */
@@ -70,7 +70,7 @@
     font-size: 1.5rem;
     color: var(--text-color);
     transition: 0.3s;
-    background-color: rgba(100, 255, 218, 0.05); /* Fond très léger */
+    background-color: rgba(100, 255, 218, 0.05); 
     padding: 0.5rem;
     border-radius: var(--border-radius);
     display: flex;
@@ -107,7 +107,7 @@
 
 @media screen and (min-width: 1024px) {
     .footer__container {
-        grid-template-columns: 1.5fr 1fr 1fr; /* 3 colonnes : Logo large + Liens + Réseaux */
+        grid-template-columns: 1.5fr 1fr 1fr; 
         align-items: start;
     }
 }

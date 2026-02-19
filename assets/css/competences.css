@@ -56,7 +56,7 @@
     font-weight: var(--font-medium);
 }
 
-/* Style des tags (étiquettes) pour les langages */
+
 .skills__list {
     display: flex;
     flex-wrap: wrap;
@@ -112,8 +112,8 @@
     display: block;
 }
 
-.level-native { background-color: #4ade80; box-shadow: 0 0 8px #4ade80; } /* Vert */
-.level-advanced { background-color: #60a5fa; box-shadow: 0 0 8px #60a5fa; } /* Bleu */
+.level-native { background-color: #4ade80; box-shadow: 0 0 8px #4ade80; } 
+.level-advanced { background-color: #60a5fa; box-shadow: 0 0 8px #60a5fa; } 
 
 /* Tags pour les Soft Skills */
 .skills__tags-soft {
@@ -126,20 +126,20 @@
     border: 1px solid var(--first-color);
     color: var(--title-color);
     padding: 0.3rem 0.8rem;
-    border-radius: 2rem; /* Plus arrondi pour différencier du technique */
+    border-radius: 2rem; 
     font-size: var(--small-font-size);
 }
 
 /* Responsive pour grand écran */
 @media screen and (min-width: 1024px) {
     .skills__container {
-        /* Technique prend plus de place, Transverse à droite */
+        
         grid-template-columns: 2fr 1fr;
     }
     
     .skills__transverse {
-        height: fit-content; /* S'adapte au contenu */
+        height: fit-content; 
         position: sticky;
-        top: 6rem; /* Si on scroll, ça reste visible si la colonne gauche est longue */
+        top: 6rem; 
     }
 }

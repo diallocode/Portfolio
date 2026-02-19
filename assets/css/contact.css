@@ -1,11 +1,11 @@
 .contact__container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 colonnes strictes */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 4rem;
-    align-items: center; /* C'EST LA CLÉ : Centre verticalement */
+    align-items: center; 
 }
 
-/* Colonne Gauche (Infos) */
+/* Colonne Gauche */
 .contact__content p {
     margin-bottom: 2rem;
 }
@@ -42,9 +42,9 @@
     font-family: monospace;
 }
 
-/* Colonne Droite (Formulaire style "Terminal") */
+/* Colonne Droite (Formulaire style) */
 .contact__form {
-    background-color: #112240; /* Un peu plus clair que le fond */
+    background-color: #112240; 
     padding: 2.5rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-subtle);
@@ -64,7 +64,7 @@
 
 .contact__form-input {
     width: 100%;
-    background-color: rgba(2, 12, 27, 0.7); /* Fond très sombre */
+    background-color: rgba(2, 12, 27, 0.7); 
     border: 1px solid rgba(100, 255, 218, 0.2);
     padding: 1rem;
     border-radius: var(--border-radius);

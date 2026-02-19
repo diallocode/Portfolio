@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
                         projectCard.appendChild(imgBox);
 
-                        // 2. DIV CONTENU
+                        // DIV CONTENU
                         const contentBox = document.createElement('div');
                         contentBox.classList.add('projects__content');
 

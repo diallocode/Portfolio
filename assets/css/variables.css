@@ -1,29 +1,27 @@
-/* Import d'une police plus "Tech" : Inter */
+/* import police */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
 :root {
     --header-height: 4rem;
 
-    /* --- PALETTE "CYBER MINIMALIST" --- */
-    /* La couleur principale Néon */
-    --first-color: #64ffda; /* Cyan électrique */
-    /* Fond profond (Navy Dark) */
+    
+    --first-color: #64ffda; 
+    
     --body-color: #0a192f; 
-    /* Fond des cartes (un peu plus clair) */
+   
     --container-color: #112240;
-    /* Couleur de survol légère */
+   
     --hover-color: rgba(100, 255, 218, 0.1);
     
-    /* Textes */
-    --title-color: #ccd6f6; /* Blanc cassé très clair */
-    --text-color: #8892b0;  /* Gris bleuté pour le corps de texte */
+    
+    --title-color: #ccd6f6;
+    --text-color: #8892b0;  
     --text-color-light: #6c757d;
 
     /* --- TYPOGRAPHIE --- */
     --body-font: 'Inter', sans-serif;
     
-    /* Tailles de police plus assumées */
-    --biggest-font-size: clamp(2.5rem, 8vw, 4.5rem); /* Taille dynamique */
+    --biggest-font-size: clamp(2.5rem, 8vw, 4.5rem); 
     --h1-font-size: 2rem;
     --h2-font-size: 1.75rem;
     --h3-font-size: 1.25rem;
@@ -35,10 +33,9 @@
     --font-medium: 500;
     --font-bold: 700;
 
-    /* --- Z-INDEX & EFFETS --- */
     --z-fixed: 100;
     --shadow-subtle: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
-    --border-radius: 4px; /* Coins moins arrondis pour un look plus "tech" */
+    --border-radius: 4px; 
 }
 
 html {
