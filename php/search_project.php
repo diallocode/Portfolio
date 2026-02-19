@@ -1,16 +1,13 @@
 <?php
 require_once 'Database.php';
 
-//  On démarre la session pour savoir dans quelle langue est l'utilisateur
+//  Initialisation de la langue
 if (session_status() === PHP_SESSION_NONE) { session_start(); }
 $lang = $_SESSION['lang'] ?? 'en';
-
-
-$tr = include __DIR__ . '/../lang/' . $lang . '.php'; 
+$tr = include __DIR__ . '/../lang/' . $lang . '.php';
 
 $db = Database::getInstance()->getConnection();
 
-// Récupérer le paramètre de recherche
 $search = isset($_GET['search']) ? trim($_GET['search']) : '';
 
 $query = "SELECT * FROM projects";
@@ -26,17 +23,16 @@ $stmt->execute($params);
 
 $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// On boucle sur tous les projets trouvés pour traduire leurs titres et descriptions
+//  Traduction des résultats
 foreach ($projects as &$project) {
-    // Traduction du titre
     $dbName = trim($project['name']);
     $project['name'] = $tr[$dbName] ?? $dbName;
 
-    // Traduction de la description
     $dbDesc = trim($project['description']);
     $project['description'] = $tr[$dbDesc] ?? $dbDesc;
 }
-unset($project); 
+unset($project);
 
+//  Envoi du JSON traduit
 header('Content-Type: application/json');
 echo json_encode($projects);
