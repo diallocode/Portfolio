@@ -1,76 +1,109 @@
 <?php
 return [
+    // === NAVIGATION ===
     'home' => 'Home',
-    'about' => 'About',
+    'education' => 'Education',
     'skills' => 'Skills',
     'projects' => 'Projects',
-    'projects_title' => 'Recent Projects',
+    'experiences' => 'Experience',
     'contact' => 'Contact',
     'admin' => 'Admin',
     'logout' => 'Logout',
-    'student_in_computer_science' => 'Student in Computer Science',
-    'copyright' => 'Copyright Diallo. All rights reserved',
-    'my' => 'My', // about
-    'intro' => 'Intro',
-    'about_description' => "Curious and passionate about computer science, I continuously train in cybersecurity and networking alongside my university studies. Discover my journey and hobbies.",
-    'educations' => 'Educations',
-    'certifications' => 'Certifications',
-    'hobbies' => 'Hobbies',
-    'licence_info_2' => '2nd year of Computer Science degree',
-    'licence_info_1' => '1st year of Computer Science degree',
-    'licence_math' => '1st year of Mathematics degree',
-    'cert_eth_hacking' => 'Complete Ethical Hacking',
-    'cert_ip_addressing' => 'IP Addressing Basics',
-    'cert_competences' => 'Digital Skills Certification',
-    'culture' => 'Culture',
-    'lectures' => 'Reading',
-    'cinema' => 'Cinema',
-    'anime' => 'Anime',
-    'game' => 'Game',
-    'chess' => 'Chess',
-    'hello' => 'Hello,', // home
+
+    // === SECTION: HOME ===
+    'hello' => 'Hello,',
     'my_name' => 'I am Mamadou Tanou Diallo',
-    'student_info' => 'Computer Science Student',
-    'home_description' => "Passionate about cybersecurity, web development and networking, I'm always motivated to learn new technologies and take on challenges.",
-    'contact_me' => 'Contact Me',
-    'skills' => 'Skills', // competences
-    'favorite' => 'Favorite',
-    'skills' => 'Skills',
-    'competences' => 'Skills',
-    'programming_languages_title' => 'Programming Languages',
-    'programming_languages' => 'Python, C, Java, Haskell, Prolog, RISC-V',
+    'student_info' => 'IT & Security Engineering Student',
+    'home_description' => "Specializing in IT Security and Technologies at INSA Centre Val de Loire. Passionate about the tech ecosystem, from software development to cybersecurity, I possess a strong technical curiosity. I am actively looking for an apprenticeship for the upcoming school year to explore various challenges and bring my energy to your projects.",
+    'download_cv' => 'Download Resume',
+    'view_projects' => 'see my projects',
+
+    // === SECTION TITLES (Cyber Style 01, 02...) ===
+    'subtitle_01' => '<span>01.</span> Stack',
+    'title_01' => 'Technical Expertise',
+    
+    'subtitle_02' => '<span>02.</span> Portfolio',
+    'title_02' => 'Projects & Code',
+    
+    'subtitle_03' => '<span>03.</span> Bio',
+    'title_03' => 'Academic Background',
+    
+    'subtitle_04' => '<span>04.</span> Career',
+    'title_04' => 'Professional History',
+    
+    'subtitle_05' => '<span>05.</span> Connection',
+    'title_05' => 'Start a discussion',
+
+    // === SECTION: SKILLS ===
+    'programming' => 'Programming Languages',
+    'programming_languages' => 'Python, C, Java',
     'web_dev_title' => 'Web Development',
-    'web_tech' => 'JavaScript, HTML, CSS, SQL',
+    'web_tech' => 'JavaScript, HTML, CSS, PHP, SQL',
     'tools_env_title' => 'Tools and Environments',
-    'tools_env' => 'Git, Linux',
+    'tools_env' => 'Git, Linux (Bash)',
     'cyber_title' => 'Cybersecurity & Networks',
     'cyber_tools' => 'Metasploit, Nmap, Nessus, Wireshark',
     'soft_skills' => 'Soft Skills',
-    'soft_skills_desc' => 'Teamwork, autonomy, good English level',
-    'my' => 'My',// experience
-    'services' => 'Services',
-    'my_experiences' => 'My Experiences',
-    'experience_1_title' => 'Private Tutoring',
-    'experience_1_desc' => "I provide private tutoring in mathematics and algorithmics to a high school student, helping them strengthen their skills.",
-    'experience_2_title' => "Hotel Employee - One Loft",
-    'experience_2_desc' => "I prepared beds for guest arrivals, ensuring a clean and welcoming environment. This experience helped me develop attention to detail and teamwork.",
-    'experience_3_title' => 'Versatile Employee - Vapiano',
-    'experience_3_desc' => "I prepared meals and performed various kitchen tasks. This experience helped me improve my efficiency and ability to work under pressure.",
-    'my' => 'My', // projets
-    'projects' => 'projects',
-    'recent_projects' => 'Recent Projects',
-    'search_placeholder' => '🔍 Search a project...',
-    'see_more' => 'See more',
+    'soft_skills_desc' => "Autonomy, Pedagogy, Teamwork, Technical English",
+    'languages' => 'Languages',
+    'teamwork' => 'Teamwork',
+    'autonomy' => 'Autonomy',
+    'curiosity' => 'Curiosity',
+    'problem_solving' => 'Problem Solving',
+    'project_lead' => 'Project management',
+    'French' => 'French',
+    'English' => 'English',
+    'Technique' => 'Technique',
+    'Transverse' => 'Transverse',
+    'my_expertise' => 'my_expertise',
+
+    // === SECTION: PROJECTS ===
     'see_more_projects' => 'See more projects',
-    'get_in' => 'Get In', // contact
-    'touch' => 'Touch',
-    'contact_me' => 'Contact Me',
-    'email' => 'Email',
+
+    // === SECTION: FORMATION (ABOUT) ===
+    'educations' => 'Education',
+    'certifications' => 'Certifications',
+    'hobbies' => 'Hobbies',
+    'present' => 'Present',
+    'insa_title' => '3rd Year IT Security and Technologies',
+    'insa_desc' => 'Advanced Algorithmics, Cybersecurity, Network Architecture, Databases, Computer Architecture & Assembly, Systems Administration...',
+    'licence_info' => 'Bachelor in Computer Science',
+    'licence_info_desc' => 'Programming Basics (C, Python, Java), Web (HTML/CSS), Functional Programming, Discrete Mathematics...',
+    'licence_math' => '1st Year Bachelor in Mathematics',
+    'licence_math_desc' => 'Linear Algebra, Analysis, Mathematical Logic, Geometry...',
+    'tech_watch' => 'Reading',
+    'travel' => 'Travel',
+    'chess' => 'Chess game',
+     'cinema' => 'Cinema',
+    'cert_eth_hacking' => 'Complete Ethical Hacking (Udemy)',
+    'cert_ip_addressing' => 'IP Addressing Basics (Cybrary)',
+    'bac' => 'Hight School',
+    'option' => 'Mathematical Sciences',
+
+
+    // === SECTION: EXPERIENCES ===
+    'experience_1_title' => 'Academic Tutor (Freelance)',
+    'experience_1_subtitle' => 'Mathematics & Algorithmics',
+    'experience_1_desc' => "Pedagogy, explaining complex concepts, and mentoring students to strengthen their technical skills.",
+    'experience_2_title' => 'Versatile Employee',
+    'experience_2_subtitle' => 'Hospitality & Catering (One Loft Motel)',
+    'experience_2_desc' => "Teamwork, stress management, and adaptability in fast-paced and demanding environments.",
+    'my_experiences' => 'Experiences',
+
+
+    // === SECTION: CONTACT ===
     'location' => 'Location',
     'phone' => 'Phone',
     'enter_name' => 'Enter your name',
     'enter_email' => 'Enter your email',
     'enter_message' => 'Enter your message',
     'send' => 'Send',
-
+    'contact_me' => 'Contact me',
+     'name_label' => 'Name',
+    
+    // === FOOTER ===
+    'footer_desc' => 'IT student at INSA CVL and passionate by Cybersecurity.',
+    'socials' => 'Socials Medias',
+    'links' => 'Links',
+    'copyright' => 'Mamadou Tanou Diallo. All rights reserved.',
 ];

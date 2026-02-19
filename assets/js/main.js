@@ -97,8 +97,8 @@ if (typeof ScrollReveal !== 'undefined') {
     // --- ABOUT / EDUCATION ---
     sr.reveal(`.about__tabs`, {delay: 200})
     sr.reveal(`.timeline__item`, {interval: 200, origin: 'left'})
-    sr.reveal(`.cert__card`, {interval: 200, origin: 'right'})
-    sr.reveal(`.hobby__tag`, {interval: 100, origin: 'bottom'})
+    sr.reveal(`.about__tabs`, {delay: 200})
+    sr.reveal(`.timeline__item`, {interval: 200, origin: 'left'})
 
     // --- EXPERIENCE ---
     sr.reveal(`.experience__data`, {interval: 200})

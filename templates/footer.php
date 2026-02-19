@@ -13,12 +13,12 @@ $tr = include __DIR__ . '/../lang/' . $lang . '.php';
             Mamadou Tanou <span>Diallo</span>
         </a>
         <p class="footer__description">
-            <?= $tr['footer_desc'] ?? "Étudiant en informatique passionné par le développement web et la cybersécurité." ?>
+            <?= $tr['footer_desc'] ?>
         </p>
     </div>
 
     <div class="footer__content">
-        <h3 class="footer__title"><?= $tr['links'] ?? 'Liens' ?></h3>
+        <h3 class="footer__title"><?= $tr['links'] ?></h3>
         <ul class="footer__links">
             <li><a href="index.php#home" class="footer__link"><?= $tr['home'] ?? 'Accueil' ?></a></li>
             <li><a href="index.php#skills" class="footer__link"><?= $tr['skills'] ?? 'Compétences' ?></a></li>
@@ -28,15 +28,20 @@ $tr = include __DIR__ . '/../lang/' . $lang . '.php';
     </div>
 
     <div class="footer__content">
-        <h3 class="footer__title"><?= $tr['socials'] ?? 'Réseaux' ?></h3>
+        <h3 class="footer__title"><?= $tr['socials'] ?></h3>
         <div class="footer__social">
-            <a href="https://github.com/TonPseudoGitHub" target="_blank" class="footer__social-link" title="GitHub">
+            <a href="https://github.com/diallocode" target="_blank" class="footer__social-link" title="GitHub">
                 <i class="ri-github-line"></i>
             </a>
 
-            <a href="https://linkedin.com/in/TonProfil" target="_blank" class="footer__social-link" title="LinkedIn">
+            <a href="https://www.linkedin.com/in/mamadou-tanou-diallo-56470b285/" target="_blank" class="footer__social-link" title="LinkedIn">
                 <i class="ri-linkedin-box-line"></i>
             </a>
+
+            <a href="https://www.instagram.com/tanoudiallo.gn/" target="_blank" class="footer__social-link" title="Instagram">
+                <i class="ri-instagram-line"></i>
+            </a>
+
 
             <a href="mailto:tanoudialo04@gmail.com" class="footer__social-link" title="Email">
                 <i class="ri-mail-line"></i>

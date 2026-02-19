@@ -22,23 +22,23 @@ $tr = include __DIR__ . '/../lang/' . $lang . '.php';
         <ul class="nav__list">
             
             <li class="nav__item">
-                <a href="index.php#home" class="nav__link"><?= $tr['home'] ?? 'Accueil' ?></a>
+                <a href="index.php#home" class="nav__link"><?= $tr['home']  ?></a>
             </li>
             <li class="nav__item">
-                <a href="index.php#skills" class="nav__link"><?= $tr['skills'] ?? 'Compétences' ?></a>
+                <a href="index.php#skills" class="nav__link"><?= $tr['skills'] ?></a>
             </li>
             <li class="nav__item">
-                <a href="index.php#projects" class="nav__link"><?= $tr['projects'] ?? 'Projets' ?></a>
+                <a href="index.php#projects" class="nav__link"><?= $tr['projects'] ?></a>
             </li>
 
             <li class="nav__item">
-                <a href="more.php#education" class="nav__link"><?= $tr['education'] ?? 'Formation' ?></a>
+                <a href="more.php#education" class="nav__link"><?= $tr['education'] ?></a>
             </li>
             <li class="nav__item">
-                <a href="more.php#service" class="nav__link"><?= $tr['experiences'] ?? 'Expériences' ?></a>
+                <a href="more.php#service" class="nav__link"><?= $tr['experiences']  ?></a>
             </li>
             <li class="nav__item">
-                <a href="more.php#contact" class="nav__link"><?= $tr['contact'] ?? 'Contact' ?></a>
+                <a href="more.php#contact" class="nav__link"><?= $tr['contact'] ?></a>
             </li>
 
             <?php if (isset($_SESSION['user_id'])): ?>

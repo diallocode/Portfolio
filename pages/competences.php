@@ -12,25 +12,26 @@ $tr = include __DIR__ . '/../lang/' . $lang . '.php';
     </h3>
 
     <h2 class="section__title">
-        <?= $tr['my_expertise'] ?? 'Mon Expertise' ?>
+        <?= $tr['my_expertise'] ?>
     </h2>
 
     <div class="skills__container container">
         
         <div class="skills__area skills__tech">
             <h3 class="skills__area-title">
-                <i class="ri-code-s-slash-line"></i> Technique
+                <i class="ri-code-s-slash-line"></i> <span><?= $tr['Technique'] ?></span>
             </h3>
             
             <div class="skills__grid">
                 <div class="skills__card">
                     <div class="skills__header">
                         <i class="ri-terminal-box-line skills__icon"></i>
-                        <h3 class="skills__name"><?= $tr['programming'] ?? 'Programmation' ?></h3>
+                        <h3 class="skills__name"><?= $tr['programming'] ?></h3>
                     </div>
                     <div class="skills__list">
                         <span class="skills__tag">Python</span>
                         <span class="skills__tag">C</span>
+                        <span class="skills__tag">C++</span>
                         <span class="skills__tag">Java</span>
                         <span class="skills__tag">Haskell</span>
                         <span class="skills__tag">RISC-V</span>
@@ -68,19 +69,20 @@ $tr = include __DIR__ . '/../lang/' . $lang . '.php';
 
         <div class="skills__area skills__transverse">
             <h3 class="skills__area-title">
-                <i class="ri-user-star-line"></i> Transverse
+                <i class="ri-user-star-line"></i> <span><?= $tr['Transverse'] ?></span> 
             </h3>
 
             <div class="skills__soft-grid">
                 <div class="skills__soft-box">
-                    <h4 class="skills__soft-title"><?= $tr['languages'] ?? 'Langues' ?></h4>
+                    <h4 class="skills__soft-title"><?= $tr['languages'] ?></h4>
                     <ul class="skills__soft-list">
                         <li>
-                            <span>Français</span>
+                            <span class="langues"><?= $tr['French'] ?></span>
                             <span class="skills__level-dot level-native"></span>
                         </li>
                         <li>
-                            <span>Anglais</span> <span class="skills__level-dot level-advanced"></span>
+                            <span class="langues"><?= $tr['English'] ?></span>
+                            <span class="skills__level-dot level-advanced"></span>
                         </li>
                     </ul>
                 </div>
@@ -88,10 +90,11 @@ $tr = include __DIR__ . '/../lang/' . $lang . '.php';
                 <div class="skills__soft-box">
                     <h4 class="skills__soft-title">Soft Skills</h4>
                     <div class="skills__tags-soft">
-                        <span class="skills__tag-soft"><?= $tr['teamwork'] ?? 'Travail d\'équipe' ?></span>
-                        <span class="skills__tag-soft"><?= $tr['autonomy'] ?? 'Autonomie' ?></span>
-                        <span class="skills__tag-soft"><?= $tr['curiosity'] ?? 'Curiosité' ?></span>
-                        <span class="skills__tag-soft"><?= $tr['problem_solving'] ?? 'Résolution de problèmes' ?></span>
+                        <span class="skills__tag-soft"><?= $tr['teamwork'] ?></span>
+                        <span class="skills__tag-soft"><?= $tr['autonomy'] ?></span>
+                        <span class="skills__tag-soft"><?= $tr['curiosity'] ?></span>
+                        <span class="skills__tag-soft"><?= $tr['problem_solving'] ?></span>
+                        <span class="skills__tag-soft"><?= $tr['project_lead'] ?></span>
                     </div>
                 </div>
             </div>

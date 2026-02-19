@@ -10,10 +10,10 @@ $tr = include __DIR__ . '/../lang/' . $lang . '.php';
             <div class="home__data">
                 <span class="home__greeting"><?= $tr['hello'] ?? 'Hello,' ?></span>
                 <h1 class="home__title">Mamadou Tanou <span>Diallo</span></h1>
-                <h3 class="home__education"><?= $tr['student_info'] ?? 'Développeur Fullstack & Cyber' ?></h3>
+                <h3 class="home__education"><?= $tr['student_info'] ?></h3>
                 
                 <p class="home__description">
-                    <?= $tr['home_description'] ?? "Je transforme des problèmes complexes en code simple, sécurisé et performant. Basé en France." ?>
+                    <?= $tr['home_description'] ?>
                 </p>
 
                 <div class="home__buttons">
@@ -21,7 +21,7 @@ $tr = include __DIR__ . '/../lang/' . $lang . '.php';
                         <?= $tr['download_cv'] ?? 'Mon CV' ?> <i class="ri-download-line"></i>
                     </a>
                     <a href="#projects" class="button">
-                        <?= $tr['view_projects'] ?? 'Voir mes projets' ?> <i class="ri-arrow-right-line"></i>
+                        <?= $tr['view_projects'] ?> <i class="ri-arrow-right-line"></i>
                     </a>
                 </div>
             </div>
