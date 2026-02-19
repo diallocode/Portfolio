@@ -6,10 +6,23 @@ class Database {
 
     private function __construct()
     {
-        // Version SQLite pour le travail en local
-        $this->db = new PDO('sqlite:' . __DIR__ . '/db.sqlite');
-        $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $this->initDatabase();
+        // On récupère les variables de Railway (ou localement si tu les as définies)
+        $host = getenv('MYSQLHOST') ?: 'localhost';
+        $port = getenv('MYSQLPORT') ?: '3306';
+        $dbname = getenv('MYSQLDATABASE') ?: 'railway';
+        $user = getenv('MYSQLUSER') ?: 'root';
+        $pass = getenv('MYSQLPASSWORD') ?: '';
+
+        try {
+            // Connexion MySQL au lieu de SQLite
+            $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
+            $this->db = new PDO($dsn, $user, $pass);
+            $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            
+            $this->initDatabase();
+        } catch (PDOException $e) {
+            die("Erreur de connexion : " . $e->getMessage());
+        }
     }
 
     public static function getInstance(): Database
@@ -27,22 +40,22 @@ class Database {
 
     private function initDatabase()
     {
-        // Structure compatible SQLite
+        // On adapte le SQL pour MySQL (AUTO_INCREMENT au lieu de AUTOINCREMENT)
         $this->db->exec(
             "CREATE TABLE IF NOT EXISTS projects (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                name TEXT NOT NULL,
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                name VARCHAR(255) NOT NULL,
                 description TEXT NOT NULL,
-                image TEXT,
-                show_more_link TEXT
+                image VARCHAR(255),
+                show_more_link VARCHAR(255)
             )"
         );
 
         $this->db->exec(
             "CREATE TABLE IF NOT EXISTS messages (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                name TEXT NOT NULL,
-                email TEXT NOT NULL,
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                name VARCHAR(255) NOT NULL,
+                email VARCHAR(255) NOT NULL,
                 message TEXT NOT NULL,
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )"
@@ -50,9 +63,9 @@ class Database {
 
         $this->db->exec(
             "CREATE TABLE IF NOT EXISTS users (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                username TEXT NOT NULL UNIQUE,
-                password TEXT NOT NULL
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                username VARCHAR(255) NOT NULL UNIQUE,
+                password VARCHAR(255) NOT NULL
             )"
         );
     }
