@@ -1,91 +1,103 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+if (session_status() === PHP_SESSION_NONE) { session_start(); }
 $lang = $_SESSION['lang'] ?? 'en';
 $tr = include __DIR__ . '/../lang/' . $lang . '.php';
 ?>
 
-<section class="about section" id="about">
-    <div class="about__container container container grid">
-        <div class="about__data">
-            <h3 class="section__subtitle">
-                <?= $tr['my'] ?? 'My' ?> <span><?= $tr['intro'] ?? 'Intro' ?></span>
-            </h3>
+<section class="about section" id="education">
+    <h3 class="section__subtitle"><span>03.</span> Bio</h3>
+    <h2 class="section__title"><?= $tr['education'] ?? 'Formations & Certifications' ?></h2>
 
-            <h2 class="section__title">
-                <?= $tr['about_me'] ?? 'About Me' ?>
-            </h2>
-
-            <p class="about__description">
-                <?= $tr['about_description'] ?? "Curieux et passionné par l'informatique, je me forme continuellement aux domaines de la cybersécurité et des réseaux en parallèle de mes études universitaires. Découvrez mon parcours ainsi que mes occupations pendant mon temps libre." ?>
-            </p>
-
-            <div class="tab__section">
-                <p class="about__links active-links" onclick="opentab('educations', event)"><?= $tr['educations'] ?? 'Educations' ?></p>
-                <p class="about__links" onclick="opentab('certification', event)"><?= $tr['certifications'] ?? 'Certifications' ?></p>
-                <p class="about__links" onclick="opentab('hobbies', event)"><?= $tr['hobbies'] ?? 'Hobbies' ?></p>
+    <div class="about__container container">
+        
+        <div class="about__tabs">
+            <div class="about__tab active-tab" data-target="#education-content">
+                <i class="ri-graduation-cap-fill"></i> <?= $tr['educations'] ?? 'Études' ?>
             </div>
-
-            <div class="liste__contents active-tab" id="educations">
-                <ul>
-                    <li><span>2024 - 2025</span><br><?= $tr['licence_info_2'] ?? '2ᵉ année de Licence Informatique' ?></li>
-                    <li><span>2023 - 2024</span><br><?= $tr['licence_info_1'] ?? '1ʳᵉ année de Licence Informatique' ?></li>
-                    <li><span>2022 - 2023</span><br><?= $tr['licence_math'] ?? '1ʳᵉ année de Licence Mathématiques' ?></li>
-                </ul>
+            <div class="about__tab" data-target="#certification-content">
+                <i class="ri-medal-fill"></i> <?= $tr['certifications'] ?? 'Certifications' ?>
             </div>
-
-            <div class="liste__contents" id="certification">
-                <ul>
-                    <li><span>Udemy : 2025</span><br><?= $tr['cert_eth_hacking'] ?? 'Complete Ethical Hacking' ?></li>
-                    <li><span>Cybrary : 2024</span><br><?= $tr['cert_ip_addressing'] ?? 'IP adressing basics' ?></li>
-                    <li><span>Pix : 2023</span><br><?= $tr['cert_competences'] ?? 'Certification des compétences numériques' ?></li>
-                </ul>
-            </div>
-
-            <div class="liste__contents" id="hobbies">
-                <ul>
-                    <li><span><?= $tr['culture'] ?? 'Culture' ?></span><br><?= $tr['lectures'] ?? 'Lectures' ?></li>
-                    <li><span><?= $tr['cinema'] ?? 'Cinema' ?></span><br><?= $tr['anime'] ?? 'Anime' ?></li>
-                    <li><span><?= $tr['game'] ?? 'Jeu' ?></span><br><?= $tr['chess'] ?? 'Echecs' ?></li>
-                </ul>
+            <div class="about__tab" data-target="#hobbies-content">
+                <i class="ri-heart-fill"></i> <?= $tr['hobbies'] ?? 'Passions' ?>
             </div>
         </div>
 
-        <div class="about__image">
-        <svg class="about__blob" viewBox="0 0 550 592" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <mask id="maskBorder" mask-type="alpha">
-                   <path d="M263 48.1782C270.426 43.891 279.574 43.891 287 48.1782L501.157 
-                   171.822C508.583 176.109 513.157 184.032 513.157 192.606V439.894C513.157 
-                   448.468 508.583 456.391 501.157 460.678L287 584.322C279.574 588.609 
-                   270.426 588.609 263 584.322L48.843 460.678C41.4174 456.391 36.843 448.468 36.843 
-                   439.894V192.606C36.843 184.032 41.4174 176.109 48.843 171.822L263 48.1782Z" fill="black"/>
-                </mask>
-                <g mask="url(#maskBorder)">
-                   <rect x="37" width="476" height="630" fill="url(#pattern2)"/>
-                   
-                   <path d="M285 51.6423L499.157 175.286C505.345 178.859 509.157 185.461 509.157 
-                   192.606V439.894C509.157 447.039 505.345 453.641 499.157 457.214L285 
-                   580.858C278.812 584.43 271.188 584.43 265 580.858L50.843 457.214C44.655 453.641 
-                   40.843 447.039 40.843 439.894V192.606C40.843 185.461 44.655 178.859 50.843 
-                   175.286L265 51.6423C271.188 48.0697 278.812 48.0696 285 51.6423Z" stroke="black" stroke-width="10"/>
-                </g>
-             
-                <rect x="37" width="476" height="300" fill="url(#pattern3)"/>
-             
-                <defs>
-                   <pattern id="pattern2" patternContentUnits="objectBoundingBox" width="1" height="1">
-                      <use href="#imageBorder" transform="matrix(0.00143057 0 0 0.00108108 0.0404062 0)"/>
-                   </pattern>
-             
-                   <pattern id="pattern3" patternContentUnits="objectBoundingBox" width="1" height="1">
-                      <use href="#imageBorder" transform="matrix(0.00143057 0 0 0.00226984 0.0404062 0)"/>
-                   </pattern>
-             
-                   <!-- Insert your profile (recommended size: 640 x 940) -->
-                   <image class="about__img" id="imageBorder" width="640" height="940" href="../assets/images/tanou.png"/>
-                </defs>
-             </svg>
+        <div class="about__content active-content" id="education-content">
+            <div class="timeline">
+                <div class="timeline__item">
+                    <span class="timeline__date">2024 - 2025</span>
+                    <h3 class="timeline__title">Licence 2 Informatique</h3>
+                    <span class="timeline__subtitle">Université de Strasbourg</span>
+                    <p class="timeline__desc">Algorithmique avancée, Structures de données, Architecture réseau.</p>
+                </div>
+                <div class="timeline__item">
+                    <span class="timeline__date">2023 - 2024</span>
+                    <h3 class="timeline__title">Licence 1 Informatique</h3>
+                    <span class="timeline__subtitle">Université de Strasbourg</span>
+                    <p class="timeline__desc">Bases de la programmation (C, Python), Web (HTML/CSS), Mathématiques discrètes.</p>
+                </div>
+                <div class="timeline__item">
+                    <span class="timeline__date">2022 - 2023</span>
+                    <h3 class="timeline__title">Licence 1 Mathématiques</h3>
+                    <span class="timeline__subtitle">Université de Strasbourg</span>
+                    <p class="timeline__desc">Algèbre linéaire, Analyse, Logique mathématique.</p>
+                </div>
+            </div>
         </div>
+
+        <div class="about__content" id="certification-content">
+            <div class="cert__grid">
+                <div class="cert__card">
+                    <div class="cert__icon"><i class="ri-shield-check-fill"></i></div>
+                    <div class="cert__data">
+                        <h3 class="cert__title">Ethical Hacking</h3>
+                        <span class="cert__issuer">Udemy - 2025</span>
+                    </div>
+                </div>
+                <div class="cert__card">
+                    <div class="cert__icon"><i class="ri-router-fill"></i></div>
+                    <div class="cert__data">
+                        <h3 class="cert__title">IP Addressing</h3>
+                        <span class="cert__issuer">Cybrary - 2024</span>
+                    </div>
+                </div>
+                <div class="cert__card">
+                    <div class="cert__icon"><i class="ri-award-fill"></i></div>
+                    <div class="cert__data">
+                        <h3 class="cert__title">Certification Pix</h3>
+                        <span class="cert__issuer">Compétences Numériques - 2023</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="about__content" id="hobbies-content">
+            <div class="hobbies__container">
+                <span class="hobby__tag"><i class="ri-chess-fill"></i> Échecs</span>
+                <span class="hobby__tag"><i class="ri-book-read-fill"></i> Veille Tech</span>
+                <span class="hobby__tag"><i class="ri-movie-2-fill"></i> Cinéma</span>
+                <span class="hobby__tag"><i class="ri-terminal-window-fill"></i> Coding</span>
+                <span class="hobby__tag"><i class="ri-plane-fill"></i> Voyage</span>
+            </div>
+        </div>
+
     </div>
 </section>
+
+<script>
+    // Petit script JS pour gérer les onglets sans recharger la page
+    const tabs = document.querySelectorAll('.about__tab');
+    const contents = document.querySelectorAll('.about__content');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const target = document.querySelector(tab.dataset.target);
+            
+            tabs.forEach(t => t.classList.remove('active-tab'));
+            contents.forEach(c => c.classList.remove('active-content'));
+            
+            tab.classList.add('active-tab');
+            target.classList.add('active-content');
+        });
+    });
+</script>

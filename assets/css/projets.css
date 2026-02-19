@@ -1,162 +1,128 @@
-@import 'variables.css';  /* Importation des variables */
-
-
-.projects{
-    background-color: var(--container-color);
-}
-
-.projects__container{
-    row-gap: 2rem;
+/* --- CONTAINER --- */
+.projects__container {
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: 1fr;
     justify-content: center;
-    padding-block: 1rem;
+    margin-bottom: 3rem; /* Ajout d'une marge sous la grille pour pousser le bouton */
 }
 
-.projects__card{
-    position: relative;
-    border-radius: 1rem;
+/* --- CARTE PROJET --- */
+.projects__card {
+    background-color: var(--container-color);
+    border-radius: var(--border-radius);
     overflow: hidden;
-}
-
-.projects__img{
-    width: 100%;
-    height: 100%;
-}
-
-.projects__modal{
-    position: absolute;
-    left: 0;
-    bottom: -100;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg,
-                hsla(0, 0%, 0%, 0) 0%,
-                hsla(var(--hue), 70%, 40%, .8) 120%);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur((4px)); /* for safari */
-    border-radius: 1rem;
+    border: 1px solid rgba(100, 255, 218, 0.05);
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: bottom .4s;
+    height: 100%; 
 }
 
-.projects__subtitle,
-.projects__button{
-    color: var(--title-color);
-    font-size: var(--small-font-size);
+.projects__card:hover {
+    transform: translateY(-7px);
+    border-color: var(--first-color);
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
 }
 
-.projects__subtitle{
-    display: block;
-    margin-bottom: .25rem;
+/* --- ZONE IMAGE (HAUT) --- */
+.projects__image-box {
+    width: 100%;
+    height: 220px; /* Un peu plus grand pour bien voir l'image */
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+    flex-shrink: 0; /* Empêche l'image de rétrécir si le texte est long */
 }
 
-.projects__title{
-    font-size: var(--h2-font-size);
-    margin-bottom: .75rem;
+.projects__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+    filter: grayscale(30%) brightness(0.9);
 }
 
-.projects__button{
-    display: flex;
-    align-items: center;
-    column-gap: .5rem;
-    font-weight: var(--font-medium);
-}
-
-.projects__button{
-    font-size: 1.25rem;
-}
-
-/* ce css permet d'afficher les ecriture avec une coulour lorsque l'on met la souris sur un projet */
-.projects__card:hover .projects__modal{
-    bottom: 0;
-}
-
-
-.search__form {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-    justify-content: center;
-}
-
-.search__input, .search__select {
-    padding: 3px;
-    border: 1px solid #ccc;
-    border-radius: 7px;
-    font-size: 16px;
-}
-
-.search__input {
-    width: 250px;
-}
-
-.search__select {
-    width: 180px;
-}
-
-/* Styles pour le bouton "Voir plus" */
-.projects__description{
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-.projects__description:hover {
-    background-color: #0056b3;
-}
-
-
-/* Styles pour le bouton "Voir plus de projets" */
-.projects__more-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px; /* Espace au-dessus du bouton */
-}
-
-.nav__lang {
-    display: flex;
-    align-items: center;
-    font-size: 1.2rem;
-}
-
-.nav__lang a {
-    transition: transform 0.3s;
-}
-
-.nav__lang a:hover {
+.projects__card:hover .projects__img {
     transform: scale(1.1);
+    filter: none;
 }
 
+/* --- ZONE CONTENU (BAS) --- */
+.projects__content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+}
 
+.projects__title {
+    font-size: var(--h3-font-size);
+    color: var(--title-color);
+    margin-bottom: 0.75rem;
+    transition: 0.3s;
+}
 
-@media (max-width: 768px) {
-    .search__form {
-        flex-direction: column;
-        align-items: center;
-    }
-    .search__input, .search__select {
-        width: 100%;
+.projects__card:hover .projects__title {
+    color: var(--first-color);
+}
+
+.projects__description {
+    font-size: var(--small-font-size);
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    
+    /* MODIFICATION ICI : On augmente la limite de lignes */
+    display: -webkit-box;
+    -webkit-line-clamp: 8; /* Affiche jusqu'à 8 lignes (beaucoup plus long) */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    
+    flex-grow: 1; 
+}
+
+.projects__button {
+    width: fit-content;
+    color: var(--first-color);
+    background: transparent;
+    border: 1px solid var(--first-color);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    font-family: monospace;
+    font-size: var(--smaller-font-size);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: 0.3s;
+    margin-top: auto; 
+}
+
+.projects__button:hover {
+    background: rgba(100, 255, 218, 0.1);
+    transform: translateX(5px);
+}
+
+/* --- LE BOUTON "VOIR PLUS" --- */
+.projects__more-container {
+    display: flex;             /* On force le flexbox comme avant */
+    justify-content: center;   /* Centrage horizontal */
+    align-items: center;       /* Centrage vertical */
+    margin-top: 4rem;          /* Grosse marge au-dessus */
+    width: 100%;               /* Prend toute la largeur */
+    clear: both;               /* Sécurité pour ne pas flotter */
+}
+
+/* --- RESPONSIVE --- */
+@media screen and (min-width: 768px) {
+    .projects__container {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 768px) {
-    .projects__more{
-        flex-direction: column;
-        align-items: center;
-    }
-    .projects__more {
-        width: 100%;
+@media screen and (min-width: 1024px) {
+    .projects__container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
     }
 }
-

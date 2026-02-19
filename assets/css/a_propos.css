@@ -1,78 +1,209 @@
-@import 'variables.css';  /* Importation des variables */
-
-
-.about__conatiner{
-    row-gap: 2.5rem;
-}
-
-.about__data{
-    text-align: center;
-}
-
-.about__description{
-    margin-bottom: 1rem;
-}
-
-.about__image{
-    justify-self: center;
-}
-
-.about__blob{
-    width: 320px;
-}
-
-.about__blob path{
-    stroke: var(--first-color);
-}
-
-.tab__section{
+/* --- TABS NAVIGATION (MODERNE) --- */
+.about__tabs {
     display: flex;
-    margin-bottom: 2rem;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
 }
 
-.about__links{
-    margin-right: 40px;
-    font-size: 1rem;
-    font-weight: 50px;
+.about__tab {
     cursor: pointer;
+    background-color: var(--container-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    font-size: var(--small-font-size);
+    font-weight: var(--font-medium);
+    color: var(--text-color);
+    transition: 0.3s;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.about__tab:hover {
+    background-color: var(--body-color);
+    border-color: var(--first-color);
+    color: var(--first-color);
+}
+
+.active-tab {
+    background-color: var(--first-color);
+    color: #fff; /* Texte blanc sur fond bleu */
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4); /* Lueur bleue */
+}
+
+.about__tab i {
+    font-size: 1.1rem;
+}
+
+/* Gestion de l'affichage du contenu */
+.about__content {
+    display: none;
+    animation: fadeUp .5s ease forwards;
+}
+
+.active-content {
+    display: block;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- 1. TIMELINE EDUCATION (STYLE FRISE) --- */
+.timeline {
     position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-left: 2rem;
+}
+
+/* La ligne verticale */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background-color: var(--first-color);
+    opacity: 0.3;
+}
+
+.timeline__item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-left: 1.5rem;
+}
+
+/* Le point sur la ligne */
+.timeline__item::before {
+    content: '';
+    position: absolute;
+    left: -2.35rem; /* Ajuster pour centrer sur la ligne */
+    top: 0;
+    width: 12px;
+    height: 12px;
+    background-color: var(--first-color);
+    border-radius: 50%;
+    border: 3px solid var(--body-color); /* Effet de cercle */
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+
+.timeline__date {
+    display: inline-block;
+    font-size: var(--smaller-font-size);
+    background-color: rgba(56, 189, 248, 0.1);
+    color: var(--first-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline__title {
+    font-size: var(--h3-font-size);
+    margin-bottom: 0.25rem;
     color: var(--title-color);
 }
 
-.about__links::after{
-    content: '';
-    width: 0;
-    height: 3px;
-    background: var(--first-color);
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    transition: 0.5s;
-}
-
-.about__links.active-links::after{
-    width: 50%;
-}
-
-.liste__contents{
-    text-align: justify;
-    hyphens: auto;
-}
-
-.liste__contents ul li {
-    list-style: none;
-    margin: 10px 0;
-}
-
-.liste__contents ul li span{
-    color: var(--first-color);
-    font-size: var(--h3-font-size);
-} 
-
-.liste__contents{
-    display: none;
-}
-
-.liste__contents.active-tab{
+.timeline__subtitle {
+    font-size: var(--small-font-size);
+    color: var(--text-color);
     display: block;
+    margin-bottom: 0.75rem;
+    font-style: italic;
+}
+
+.timeline__desc {
+    font-size: var(--small-font-size);
+    color: var(--text-color-light);
+    line-height: 1.6;
+}
+
+/* --- 2. CERTIFICATIONS (GRID CARDS) --- */
+.cert__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.cert__card {
+    background-color: var(--container-color);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+}
+
+.cert__card:hover {
+    transform: translateY(-5px);
+    border-color: var(--first-color);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.cert__icon {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(56, 189, 248, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--first-color);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.cert__title {
+    font-size: var(--normal-font-size);
+    margin-bottom: 0.25rem;
+    color: var(--title-color);
+}
+
+.cert__issuer {
+    font-size: var(--smaller-font-size);
+    color: var(--text-color-light);
+}
+
+/* --- 3. HOBBIES (TAGS) --- */
+.hobbies__container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hobby__tag {
+    background-color: var(--container-color);
+    color: var(--title-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    font-size: var(--normal-font-size);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+}
+
+.hobby__tag i {
+    color: var(--first-color);
+}
+
+.hobby__tag:hover {
+    background-color: var(--first-color);
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.hobby__tag:hover i {
+    color: #fff;
 }

@@ -2,41 +2,42 @@
 require_once 'php/Database.php';
 $db = Database::getInstance()->getConnection();
 
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+if (session_status() === PHP_SESSION_NONE) { session_start(); }
 $lang = $_SESSION['lang'] ?? 'en';
 $tr = include __DIR__ . '/../lang/' . $lang . '.php';
 ?>
 
 <section class="projects section" id="projects">
-    <h3 class="section__subtitle">
-        <?= $tr['my'] ?? 'Mes' ?> <span><?= $tr['projects'] ?? 'projets' ?></span>
-    </h3>
-
-    <h2 class="section__title">
-        <?= $tr['recent_projects'] ?? 'Projets Récents' ?>
-    </h2>
+    <h3 class="section__subtitle"><span>01.</span> Portfolio</h3>
+    <h2 class="section__title"><?= $tr['recent_projects'] ?? 'Projets Récents' ?></h2>
     
-    <!-- 🔍 Formulaire de recherche -->
-    <form id="searchForm" class="search__form">
-        <input type="text" id="search" placeholder="<?= $tr['search_placeholder'] ?? '🔍 Rechercher un projet...' ?>" class="search__input">
-    </form>
-
-    <div class="projects__container container grid" id="projectsContainer">
+    <div class="projects__container container" id="projectsContainer">
         <?php
         $stmt = $db->prepare("SELECT * FROM projects LIMIT 3");
         $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo "<article class='projects__card'>";
+            
+            // 1. L'IMAGE EN HAUT
+            echo "<div class='projects__image-box'>";
             if (!empty($row['image'])) {
                 echo "<img src='" . htmlspecialchars($row['image']) . "' alt='" . htmlspecialchars($row['name']) . "' class='projects__img'>";
             }
-            echo "<div class='projects__modal'>";
-            echo "<h2 class='projects__title'>" . htmlspecialchars($row['name']) . "</h2>";
-            echo "<p id='description-" . htmlspecialchars($row['id']) . "' style='display: none;'></p>";
-            echo "<a href='" . htmlspecialchars($row['show_more_link']) . "' class='projects__button'>Git <i class='ri-external-link-line'></i></a>";
             echo "</div>";
+            
+            // 2. LE CONTENU EN BAS
+            echo "<div class='projects__content'>";
+                echo "<h3 class='projects__title'>" . htmlspecialchars($row['name']) . "</h3>";
+                
+                // Description
+                echo "<p class='projects__description'>" . htmlspecialchars($row['description']) . "</p>";
+                
+                // Bouton Git
+                echo "<a href='" . htmlspecialchars($row['show_more_link']) . "' target='_blank' class='projects__button'>";
+                echo "Code Source <i class='ri-github-line'></i>";
+                echo "</a>";
+            echo "</div>";
+            
             echo "</article>";
         }
         ?>

@@ -1,100 +1,112 @@
-/*=============== SHOW MENU ===============*/
+/*==================== SHOW MENU ====================*/
 const navMenu = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
       navClose = document.getElementById('nav-close')
 
-        /* Ouvrir le menu le menu */
+/* Validate if constant exists */
 if(navToggle){
     navToggle.addEventListener('click', () =>{
         navMenu.classList.add('show-menu')
     })
 }
 
-        /* Fermer le menu */
+/* Validate if constant exists */
 if(navClose){
     navClose.addEventListener('click', () =>{
         navMenu.classList.remove('show-menu')
     })
 }
 
-        /* Supprimer le menu pour telephone */
+/*==================== REMOVE MENU MOBILE ====================*/
 const navLink = document.querySelectorAll('.nav__link')
 
-const linkAction = () =>{
+function linkAction(){
     const navMenu = document.getElementById('nav-menu')
-    // Quand on clique sur une option on supprime le menu
+    // When we click on each nav__link, we remove the show-menu class
     navMenu.classList.remove('show-menu')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
-
-/* Ajouter du flou lors du defilement de la page */
-const blurlHeader = () =>{
+/*==================== CHANGE BACKGROUND HEADER ====================*/
+function scrollHeader(){
     const header = document.getElementById('header')
-    // Add a class if the bottom offset is greater than 50 of the viewport
-    this.scrollY >= 50 ? header.classList.add('blur-header') 
-                       : header.classList.remove('blur-header')
+    // When the scroll is greater than 50 viewport height, add the scroll-header class
+    if(this.scrollY >= 50) header.classList.add('blur-header'); else header.classList.remove('blur-header')
 }
-window.addEventListener('scroll', blurlHeader)
+window.addEventListener('scroll', scrollHeader)
 
-
-// Defilement qui ramene en haut
-const scrollUp = () =>{
-	const scrollUp = document.getElementById('scroll-up')
-    // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
-	this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
-						: scrollUp.classList.remove('show-scroll')
+/*==================== SHOW SCROLL UP ====================*/
+function scrollUp(){
+    const scrollUp = document.getElementById('scroll-up');
+    // When the scroll is higher than 350 viewport height, add the show-scroll class
+    if(this.scrollY >= 350) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll')
 }
 window.addEventListener('scroll', scrollUp)
 
-
-
-/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]')
-    
-const scrollActive = () =>{
-  	const scrollDown = window.scrollY
 
-	sections.forEach(current =>{
-		const sectionHeight = current.offsetHeight,
-			  sectionTop = current.offsetTop - 58,
-			  sectionId = current.getAttribute('id'),
-			  sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+function scrollActive(){
+    const scrollY = window.pageYOffset
 
-		if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
-			sectionsClass.classList.add('active-link')
-		}else{
-			sectionsClass.classList.remove('active-link')
-		}                                                    
-	})
+    sections.forEach(current =>{
+        const sectionHeight = current.offsetHeight
+        const sectionTop = current.offsetTop - 58
+        const sectionId = current.getAttribute('id')
+        const sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+
+        if(sectionsClass){
+            if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+                sectionsClass.classList.add('active-link')
+            }else{
+                sectionsClass.classList.remove('active-link')
+            }
+        }
+    })
 }
 window.addEventListener('scroll', scrollActive)
 
+/*==================== SCROLL REVEAL ANIMATION ====================*/
+// Vérification que ScrollReveal est bien chargé
+if (typeof ScrollReveal !== 'undefined') {
+    
+    const sr = ScrollReveal({
+        origin: 'top',
+        distance: '60px',
+        duration: 2500,
+        delay: 400,
+        // reset: true // Animations repeat (optionnel, souvent mieux à false pour un portfolio)
+    })
 
-/*=============== Animation ScrollReveal ===============*/
-const sr = ScrollReveal({
-    origin: 'top',
-    distance: '60px',
-    duration: 2500,
-    delay: 400,
-})
+    // --- HOME ---
+    sr.reveal(`.home__data`)
+    sr.reveal(`.home__image`, {delay: 500})
+    sr.reveal(`.home__social`, {delay: 600})
+    
+    // --- TITRES DE SECTIONS ---
+    sr.reveal(`.section__title, .section__subtitle`, {interval: 100})
 
-sr.reveal('.home__data, .home__social, .contact__container, .footer__container')
-sr.reveal('.home__image', {origin: 'bottom'})
-sr.reveal('.about__data, .skills__data', {origin: 'left'})
-sr.reveal('.about__image, .skills__content', {origin: 'right'})
-sr.reveal('.services__card, .projects__card', {interval: '100'})
+    // --- SKILLS ---
+    sr.reveal(`.skills__tech`, {origin: 'left'})
+    sr.reveal(`.skills__transverse`, {origin: 'right'})
+    
+    // --- PROJECTS ---
+    // L'intervalle crée un effet de cascade (les cartes apparaissent une par une)
+    sr.reveal(`.projects__card`, {interval: 200}) 
 
+    // --- ABOUT / EDUCATION ---
+    sr.reveal(`.about__tabs`, {delay: 200})
+    sr.reveal(`.timeline__item`, {interval: 200, origin: 'left'})
+    sr.reveal(`.cert__card`, {interval: 200, origin: 'right'})
+    sr.reveal(`.hobby__tag`, {interval: 100, origin: 'bottom'})
 
-const tablinks = document.getElementsByClassName('about__links')
-const tabcontents = document.getElementsByClassName('liste__contents')
-function opentab(tabname, event){
-    for(let tablink of tablinks){
-        tablink.classList.remove("active-links");
-    }
-    for(let tabcontent of tabcontents){
-        tabcontent.classList.remove("active-tab");
-    }
-    event.currentTarget.classList.add('active-links');
-    document.getElementById(tabname).classList.add("active-tab");
+    // --- EXPERIENCE ---
+    sr.reveal(`.experience__data`, {interval: 200})
+
+    // --- CONTACT ---
+    sr.reveal(`.contact__info`, {origin: 'left'})
+    sr.reveal(`.contact__form`, {origin: 'right'})
+
+    // --- FOOTER ---
+    sr.reveal(`.footer`, {delay: 100, origin: 'bottom'})
 }

@@ -1,33 +1,78 @@
-@import 'variables.css';  /* Importation des variables */
-
-
-.services__container{
-    row-gap: 2rem;
-    padding-block: 1rem;
+.experience__container {
+    display: flex;
+    justify-content: center;
 }
 
-.services__card{
-    text-align: center;
-    background-color: var(--container-color);
-    padding: 3rem 1.25rem;
-    border-radius: 1rem;
-    border: 2px solid var(--container-color);
-    transition: border .4s;
+.experience__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    max-width: 800px;
 }
 
-.services__icon{
+.experience__data {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    column-gap: 1.5rem;
+}
+
+.experience__title {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    color: var(--title-color);
+}
+
+.experience__subtitle {
+    font-size: var(--small-font-size);
+    color: var(--text-color);
+    margin-bottom: .5rem;
     display: block;
-    font-size: 4rem;
-    color: var(--first-color);
-    margin-bottom: 0.75rem;
 }
 
-.services__title{
-    font-size:var(--h2-font-size);
-    margin-bottom: 1.5rem;
+.experience__calendar {
+    font-size: var(--smaller-font-size);
+    color: var(--text-color-light);
+    margin-bottom: 1rem;
+    display: block;
 }
 
-.services__card:hover{
-    border: 2px solid var(--first-color);
+.experience__description {
+    background-color: var(--container-color);
+    padding: 1rem;
+    border-radius: .75rem;
+    font-size: var(--small-font-size);
+    border: 1px solid rgba(255,255,255,0.05);
 }
 
+.experience__rounder {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background-color: var(--first-color);
+    border-radius: 50%;
+}
+
+.experience__line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.experience__line-bar {
+    display: block;
+    width: 2px;
+    height: 100%;
+    background-color: var(--first-color);
+    transform: translate(0, -7px);
+}
+
+/* Astuce : Sur mobile, on met tout à droite de la ligne */
+@media screen and (max-width: 576px) {
+    .experience__data {
+        grid-template-columns: max-content 1fr;
+    }
+    .experience__data > div:first-child {
+        display: none; /* Cache la colonne vide de gauche */
+    }
+}

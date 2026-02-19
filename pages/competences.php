@@ -7,55 +7,95 @@ $tr = include __DIR__ . '/../lang/' . $lang . '.php';
 ?>
 
 <section class="skills section" id="skills">
-    <div class="skills__container container grid">
-        <div class="skills__data">
-            <h3 class="section__subtitle">
-                <?= $tr['favorite'] ?? 'Favorite' ?> <span><?= $tr['skills'] ?? 'Skills' ?></span>
+    <h3 class="section__subtitle">
+        <span>02.</span> Stack</span>
+    </h3>
+
+    <h2 class="section__title">
+        <?= $tr['my_expertise'] ?? 'Mon Expertise' ?>
+    </h2>
+
+    <div class="skills__container container">
+        
+        <div class="skills__area skills__tech">
+            <h3 class="skills__area-title">
+                <i class="ri-code-s-slash-line"></i> Technique
             </h3>
+            
+            <div class="skills__grid">
+                <div class="skills__card">
+                    <div class="skills__header">
+                        <i class="ri-terminal-box-line skills__icon"></i>
+                        <h3 class="skills__name"><?= $tr['programming'] ?? 'Programmation' ?></h3>
+                    </div>
+                    <div class="skills__list">
+                        <span class="skills__tag">Python</span>
+                        <span class="skills__tag">C</span>
+                        <span class="skills__tag">Java</span>
+                        <span class="skills__tag">Haskell</span>
+                        <span class="skills__tag">RISC-V</span>
+                    </div>
+                </div>
 
-            <h2 class="section__title">
-                <?= $tr['competences'] ?? 'Compétences' ?>
-            </h2>
-        </div>
+                <div class="skills__card">
+                    <div class="skills__header">
+                        <i class="ri-global-line skills__icon"></i>
+                        <h3 class="skills__name">Web & Data</h3>
+                    </div>
+                    <div class="skills__list">
+                        <span class="skills__tag">HTML / CSS</span>
+                        <span class="skills__tag">JavaScript</span>
+                        <span class="skills__tag">SQL</span>
+                        <span class="skills__tag">PHP</span>
+                    </div>
+                </div>
 
-        <div class="skills__content">
-            <div class="skills__group">
-                <div class="skills__item">
-                    <i class="ri-code-line skills__icon"></i>
-                    <div>
-                        <h3 class="skills__title"><?= $tr['programming_languages_title'] ?? 'Langages de programmation' ?></h3>
-                        <span class="skills__subtitle"><?= $tr['programming_languages'] ?? 'Python, C, Java, Haskell, Prolog, RISC-V' ?></span>
+                <div class="skills__card">
+                    <div class="skills__header">
+                        <i class="ri-shield-check-line skills__icon"></i>
+                        <h3 class="skills__name">Cyber & Tools</h3>
                     </div>
-                </div>
-                <div class="skills__item">
-                    <i class="ri-window-line skills__icon"></i>
-                    <div>
-                        <h3 class="skills__title"><?= $tr['web_dev_title'] ?? 'Développement web' ?></h3>
-                        <span class="skills__subtitle"><?= $tr['web_tech'] ?? 'JavaScript, HTML, CSS, SQL' ?></span>
-                    </div>
-                </div>
-                <div class="skills__item">
-                    <i class="ri-tools-line skills__icon"></i>
-                    <div>
-                        <h3 class="skills__title"><?= $tr['tools_env_title'] ?? 'Outils et environnements' ?></h3>
-                        <span class="skills__subtitle"><?= $tr['tools_env'] ?? 'Git, Linux' ?></span>
-                    </div>
-                </div>
-                <div class="skills__item">
-                    <i class="ri-shield-keyhole-line skills__icon"></i>
-                    <div>
-                        <h3 class="skills__title"><?= $tr['cyber_title'] ?? 'Cybersécurité et réseaux' ?></h3>
-                        <span class="skills__subtitle"><?= $tr['cyber_tools'] ?? 'Metasploit, Nmap, Nessus, Wireshark' ?></span>
-                    </div>
-                </div>
-                <div class="skills__item">
-                    <i class="ri-team-line skills__icon"></i>
-                    <div>
-                        <h3 class="skills__title"><?= $tr['soft_skills'] ?? 'Soft skills' ?></h3>
-                        <span class="skills__subtitle"><?= $tr['soft_skills_desc'] ?? "Capable de travailler en équipe et un bon niveau d'anglais" ?></span>
+                    <div class="skills__list">
+                        <span class="skills__tag">Linux</span>
+                        <span class="skills__tag">Git / GitHub</span>
+                        <span class="skills__tag">Wireshark</span>
+                        <span class="skills__tag">Nmap / Nessus</span>
+                        <span class="skills__tag">Metasploit</span>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="skills__area skills__transverse">
+            <h3 class="skills__area-title">
+                <i class="ri-user-star-line"></i> Transverse
+            </h3>
+
+            <div class="skills__soft-grid">
+                <div class="skills__soft-box">
+                    <h4 class="skills__soft-title"><?= $tr['languages'] ?? 'Langues' ?></h4>
+                    <ul class="skills__soft-list">
+                        <li>
+                            <span>Français</span>
+                            <span class="skills__level-dot level-native"></span>
+                        </li>
+                        <li>
+                            <span>Anglais</span> <span class="skills__level-dot level-advanced"></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="skills__soft-box">
+                    <h4 class="skills__soft-title">Soft Skills</h4>
+                    <div class="skills__tags-soft">
+                        <span class="skills__tag-soft"><?= $tr['teamwork'] ?? 'Travail d\'équipe' ?></span>
+                        <span class="skills__tag-soft"><?= $tr['autonomy'] ?? 'Autonomie' ?></span>
+                        <span class="skills__tag-soft"><?= $tr['curiosity'] ?? 'Curiosité' ?></span>
+                        <span class="skills__tag-soft"><?= $tr['problem_solving'] ?? 'Résolution de problèmes' ?></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>

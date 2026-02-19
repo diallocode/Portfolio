@@ -1,56 +1,145 @@
-@import 'variables.css';  /* Importation des variables */
-
-
-.skills{
-    background-color: var(--container-color);
-}
-
-.skills__container{
-    padding-bottom: 2rem;
-    row-gap: 3.5rem;
-}
-
-.skills__data{
-    text-align: center;
-}
-
-.skills__descriptions{
-    margin-bottom: 2rem;
-}
-
-.skills__content,
-.skills__group{
+/* --- Structure Globale --- */
+.skills__container {
     display: grid;
+    gap: 3rem;
+    /* Par défaut (mobile) : 1 colonne */
+    grid-template-columns: 1fr;
 }
 
-.skills__content{
-    grid-template-columns: repeat(2, max-content); /* diviser en deux la liste de competence*/
-    column-gap: 4rem;
-    justify-content: center;
-    align-items: baseline;
-}
-
-.skills__group{
-    row-gap: 1rem;
-    list-style: decimal-leading-zero; /* fait la liste sous forme 01 02 etc ...*/
-}
-
-.skills__item{
-    font-weight: var(--font-medium);
+.skills__area-title {
+    font-size: var(--h2-font-size);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     color: var(--title-color);
 }
 
-.skills__item::marker{
-    color:var(--first-color); /* Colorer les numeros de listes*/
-}
-
-.skills__icon {
-    font-size: 2rem;
+.skills__area-title i {
     color: var(--first-color);
 }
 
-.skills__group {
+/* --- Partie Technique (Grid 2 colonnes sur grand écran) --- */
+.skills__grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
-    gap: 2rem; /* Espacement entre les éléments */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.skills__card {
+    background-color: var(--container-color);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.skills__card:hover {
+    transform: translateY(-5px);
+    border-color: var(--first-color);
+}
+
+.skills__header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.skills__icon {
+    font-size: 1.5rem;
+    color: var(--first-color);
+}
+
+.skills__name {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+}
+
+/* Style des tags (étiquettes) pour les langages */
+.skills__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skills__tag {
+    background-color: var(--body-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.5rem;
+    font-size: var(--small-font-size);
+    color: var(--text-color);
+    transition: color 0.3s, background 0.3s;
+}
+
+.skills__card:hover .skills__tag {
+    background-color: var(--first-color-alt);
+    color: white;
+}
+
+/* --- Partie Transverse --- */
+.skills__transverse {
+    background-color: var(--container-color);
+    padding: 2rem;
+    border-radius: 1.5rem;
+}
+
+.skills__soft-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.skills__soft-title {
+    font-size: var(--h3-font-size);
+    margin-bottom: 1rem;
+    color: var(--first-color);
+}
+
+/* Liste des langues avec point de niveau */
+.skills__soft-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    font-weight: var(--font-medium);
+}
+
+.skills__level-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: block;
+}
+
+.level-native { background-color: #4ade80; box-shadow: 0 0 8px #4ade80; } /* Vert */
+.level-advanced { background-color: #60a5fa; box-shadow: 0 0 8px #60a5fa; } /* Bleu */
+
+/* Tags pour les Soft Skills */
+.skills__tags-soft {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skills__tag-soft {
+    border: 1px solid var(--first-color);
+    color: var(--title-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 2rem; /* Plus arrondi pour différencier du technique */
+    font-size: var(--small-font-size);
+}
+
+/* Responsive pour grand écran */
+@media screen and (min-width: 1024px) {
+    .skills__container {
+        /* Technique prend plus de place, Transverse à droite */
+        grid-template-columns: 2fr 1fr;
+    }
+    
+    .skills__transverse {
+        height: fit-content; /* S'adapte au contenu */
+        position: sticky;
+        top: 6rem; /* Si on scroll, ça reste visible si la colonne gauche est longue */
+    }
 }

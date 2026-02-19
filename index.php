@@ -14,40 +14,43 @@ $templates_path = "templates/";
 <html lang="<?= $lang ?>">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Mamadou Tanou Diallo | Développeur Fullstack & Cyber</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22></text></svg>">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-
-    <title>my_portfolio</title>
 </head>
 
 <body>
-<!--HEADER-->
     <header class="header" id="header">
         <?php include_once $templates_path . 'menu_nav.php'; ?>
     </header>
 
-<!-- MAIN -->
     <main class="main">
         <?php 
+        // 1. Accueil
         include_once $pages_path . 'home.php'; 
-        include_once $pages_path . 'experiences.php'; 
+
+        // 2. Projets (Déplacé ici pour la visibilité)
+        include_once $pages_path . 'projets.php'; 
+        
+        // 3. Compétences (Logique avant les projets)
         include_once $pages_path . 'competences.php'; 
         ?>
     </main>
 
-<!-- FOOTER -->
     <footer class="footer">
         <?php include_once $templates_path . 'footer.php'; ?>
     </footer>
 
-    <!-- Scroll to top -->
     <a href="#" class="scrollup" id="scroll-up">
         <i class="ri-arrow-up-line"></i>
     </a>
 
+    <script src="assets/js/loadProjects.js" defer></script>
     <script src="assets/js/scrollreveal.min.js" defer></script>
     <script src="assets/js/main.js" defer></script>
 </body>

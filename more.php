@@ -16,42 +16,39 @@ $pages_path = "pages/";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $tr['contact_me'] ?? 'Contact' ?></title>
+    <title><?= $tr['about_me'] ?? 'En savoir plus' ?></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-<!--HEADER-->
-<header class="header" id="header">
-    <?php include_once $templates_path . 'menu_nav.php'; ?>
-</header>
+    <header class="header" id="header">
+        <?php include_once $templates_path . 'menu_nav.php'; ?>
+    </header>
 
-<!-- MAIN -->
-<main class="main">
-    <?php include_once $pages_path . 'about.php'; ?>
+    <main class="main">
+        <?php 
+        // 1. A propos
+        include_once $pages_path . 'about.php'; 
+        
+        // 2. Expériences (Déplacé ici)
+        include_once $pages_path . 'experiences.php'; 
 
-    <!-- Projects Section -->
-    <?php include_once $pages_path . 'projets.php'; ?>
+        // 3. Contact
+        include_once $pages_path . 'contact.php'; 
+        ?>
+    </main>
 
-    <!-- Contact Section -->
-    <?php include_once $pages_path . 'contact.php'; ?>
-</main>
+    <footer class="footer">
+        <?php include_once $templates_path . 'footer.php'; ?>
+    </footer>
 
-<!-- FOOTER -->
-<footer class="footer">
-    <?php include_once $templates_path . 'footer.php'; ?>
-</footer>
+    <a href="#" class="scrollup" id="scroll-up">
+            <i class="ri-arrow-up-line"></i>
+    </a>
 
- <!-- Scroll to top -->
-<a href="#" class="scrollup" id="scroll-up">
-        <i class="ri-arrow-up-line"></i>
-</a>
-
-<!-- JS -->
-<script src="assets/js/loadProjects.js" defer></script>
-<script src="assets/js/contact.js" defer></script>
-<script src="assets/js/search_project.js" defer></script>
-<script src="assets/js/scrollreveal.min.js" defer></script>
-<script src="assets/js/main.js" defer></script>
+    <script src="assets/js/contact.js" defer></script>
+    <script src="assets/js/scrollreveal.min.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
 
 </body>
 </html>
