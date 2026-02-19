@@ -1,10 +1,10 @@
-# 🌐 Portfolio - Mamadou Tanou Diallo
+#  Portfolio - Mamadou Tanou Diallo
 
 Bienvenue sur mon portfolio personnel, développé dans le cadre d’un projet universitaire. Ce site met en avant mes compétences en développement web et gestion de projet, tout en respectant les bonnes pratiques de sécurité et d’accessibilité.
 
 ---
 
-## 📁 Structure du projet
+##  Structure du projet
 
 Le projet est organisé comme suit :
 
@@ -25,7 +25,7 @@ my_portfolio/
  https://portfolio-production-ecbc.up.railway.app/
 
 
-## 🚀 Lancer le projet
+##  Lancer le projet
 
 1. Clonez le dépôt :
    ```bash
@@ -43,27 +43,23 @@ Mettez à jour les informations de connexion dans php/Database.php.
 
 5. Ouvrez votre navigateur et accédez à :
     http://localhost:8000
+    
 
-## Mot de passe pour le menu admin 
-    username : tanou
-    password : diallo
+##  Fonctionnalités
 
-
-## 🧩 Fonctionnalités
-
-- 🔐 Connexion administrateur sécurisée
-- 📚 Gestion de projets (Ajout, Suppression)
-- 🗂️ Chargement AJAX des projets avec pagination
-- 🔍 Barre de recherche dynamique via `fetch()`
-- 📬 Formulaire de contact (POST) avec validation JS + PHP
-- 🏳️‍🌍 Système de **traduction dynamique** (FR / EN)
-- 📱 Responsive design avec menu mobile
-- ♿ Accessibilité : `alt`, `label`, `aria`, textes clairs
-- 🧼 Code sécurisé : protection **XSS** et **SQL injection** via PDO préparé
+-  Connexion administrateur sécurisée
+-  Gestion de projets (Ajout, Suppression)
+-  Chargement AJAX des projets avec pagination
+-  Barre de recherche dynamique via `fetch()`
+-  Formulaire de contact (POST) avec validation JS + PHP
+-  Système de **traduction dynamique** (FR / EN)
+-  Responsive design avec menu mobile
+-  Accessibilité : `alt`, `label`, `aria`, textes clairs
+-  Code sécurisé : protection **XSS** et **SQL injection** via PDO préparé
 
 ---
 
-## ✅ Technologies utilisées
+##  Technologies utilisées
 
 - HTML5 / CSS3 / JavaScript (ES6)
 - PHP 8 avec PDO
@@ -81,13 +77,13 @@ Mettez à jour les informations de connexion dans php/Database.php.
 
 ---
 
-## 📧 Contact
+##  Contact
 
 - **Email** : tanoudialo04@gmail.com
 - **LinkedIn** : https://www.linkedin.com/in/mamadou-tanou-diallo-56470b285/
 
 
-## 📝 Licence
+## Licence
 
 Ce projet est à usage pédagogique. Toute réutilisation à des fins professionnelles ou commerciales nécessite une autorisation.
 
