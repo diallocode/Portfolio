@@ -19,11 +19,11 @@ return [
     'view_projects' => 'see my projects',
 
     // === SECTION TITLES (Cyber Style 01, 02...) ===
-    'subtitle_01' => '<span>01.</span> Stack',
+    'subtitle_01' => '<span>02.</span> Stack',
     'title_01' => 'Technical Expertise',
     
-    'subtitle_02' => '<span>02.</span> Portfolio',
-    'title_02' => 'Projects & Code',
+    'subtitle_02' => '<span>01.</span> Portfolio',
+    'title_02' => 'Projects',
     
     'subtitle_03' => '<span>03.</span> Bio',
     'title_03' => 'Academic Background',
@@ -59,7 +59,38 @@ return [
 
     // === SECTION: PROJECTS ===
     'see_more_projects' => 'See more projects',
+    'recent_projects' => 'Recent Projects',
+    'source_code' => 'Code Source',
+   
+    // 1. Mini-Shell
+    'proj_shell_title' => 'UNIX Mini-Shell',
+    'proj_shell_desc' => "Development of a UNIX command interpreter 'from scratch' in C. Built without the standard library (libc), relying exclusively on POSIX system calls (fork, execve, pipe). The project includes full process management, I/O redirections, and rewriting memory allocation (malloc). Supports over 20 commands.",
 
+    // 2. Age of Empires
+    'proj_aoe_title' => 'Age of Empires II',
+    'proj_aoe_desc' => "Development of a real-time strategy (RTS) game. Designed the software architecture, implemented the game engine (entity management, pathfinding, collisions), and created the user interface. A comprehensive challenge combining mathematical logic and performance optimization.",
+
+    // 3. Mastermind
+    'proj_mastermind_title' => 'Mastermind',
+    'proj_mastermind_desc' => "Development of a digital version of the famous Mastermind game. Implemented the game engine and the combinatorial comparison algorithm (detection of exact and partial matches). Rigorous management of user inputs and the interactive loop.",
+
+    // 4. File Sorter Python
+    'proj_sorter_title' => 'File Sorter',
+    'proj_sorter_desc' => "Development of a Python automation script designed to dynamically clean and reorganize a file system. Intelligent sorting based on extension analysis, with on-the-fly creation of target directories and secure data routing.",
+
+    // 5. Kakuro C++
+    'proj_kakuro_title' => 'Kakuro Game',
+    'proj_kakuro_desc' => "Development of the mathematical logic game Kakuro in C++. Full modeling of the game engine based on Object-Oriented Programming (OOP) principles. Focused on grid validation algorithms (sum constraints) and strict memory management.",
+
+    // 6. Web App Conduite
+    'proj_driving_title' => 'Driving Tracker (Web App)',
+    'proj_driving_desc' => "Development of an interactive web application dedicated to tracking driving conditions. Implemented a dynamic mileage calculator in JavaScript and designed a responsive user interface (UI) in HTML/CSS for a seamless user experience.",
+
+    // 7. Cloudflare / Réseau
+    'proj_network_title' => 'Cloudflare/Reverse Proxy',
+    'proj_network_desc' => "Design of a network relay system (CDN / Reverse Proxy type). Implemented proxy servers capable of intercepting and redistributing traffic between multiple clients and servers, thereby ensuring the high availability of the architecture.",
+    
+   
     // === SECTION: FORMATION (ABOUT) ===
     'educations' => 'Education',
     'certifications' => 'Certifications',
