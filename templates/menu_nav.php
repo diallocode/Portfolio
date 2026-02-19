@@ -22,23 +22,23 @@ $tr = include __DIR__ . '/../lang/' . $lang . '.php';
         <ul class="nav__list">
             
             <li class="nav__item">
-                <a href="index.php#home" class="nav__link"><?= $tr['home']  ?></a>
+                <a href="index.php#home" class="nav__link"><?= $tr['home'] ?? 'Accueil' ?></a>
             </li>
             <li class="nav__item">
-                <a href="index.php#skills" class="nav__link"><?= $tr['skills'] ?></a>
+                <a href="index.php#skills" class="nav__link"><?= $tr['skills'] ?? 'Compétences' ?></a>
             </li>
             <li class="nav__item">
-                <a href="index.php#projects" class="nav__link"><?= $tr['projects'] ?></a>
+                <a href="index.php#projects" class="nav__link"><?= $tr['projects'] ?? 'Projets' ?></a>
             </li>
 
             <li class="nav__item">
-                <a href="more.php#education" class="nav__link"><?= $tr['education'] ?></a>
+                <a href="more.php#education" class="nav__link"><?= $tr['education'] ?? 'Formation' ?></a>
             </li>
             <li class="nav__item">
-                <a href="more.php#service" class="nav__link"><?= $tr['experiences']  ?></a>
+                <a href="more.php#service" class="nav__link"><?= $tr['experiences'] ?? 'Expériences' ?></a>
             </li>
             <li class="nav__item">
-                <a href="more.php#contact" class="nav__link"><?= $tr['contact'] ?></a>
+                <a href="more.php#contact" class="nav__link"><?= $tr['contact'] ?? 'Contact' ?></a>
             </li>
 
             <?php if (isset($_SESSION['user_id'])): ?>
@@ -48,19 +48,16 @@ $tr = include __DIR__ . '/../lang/' . $lang . '.php';
                     </a>
                 </li>
                 <li class="nav__item">
-                    <a href="admin/logout.php" class="nav__link">Déconnexion</a>
+                    <a href="admin/logout.php" class="nav__link"><?= $tr['logout'] ?? 'Déconnexion' ?></a>
                 </li>
-            <?php else: ?>
-                <?php endif; ?>
+            <?php endif; ?>
 
-            <li class="nav__item nav__lang" style="display: flex; gap: 0.5rem;">
-                <a href="php/set_lang.php?lang=fr" title="Français" style="opacity: <?= $lang == 'fr' ? '1' : '0.5' ?>;">
-                    🇫🇷
-                </a>
-                <a href="php/set_lang.php?lang=en" title="English" style="opacity: <?= $lang == 'en' ? '1' : '0.5' ?>;">
-                    🇬🇧
-                </a>
+            <li class="nav__item nav__lang">
+                <a href="php/set_lang.php?lang=fr" class="lang__btn <?= $lang === 'fr' ? 'active-lang' : '' ?>" title="Français">FR</a>
+                <span class="lang__separator">|</span>
+                <a href="php/set_lang.php?lang=en" class="lang__btn <?= $lang === 'en' ? 'active-lang' : '' ?>" title="English">EN</a>
             </li>
+
         </ul>
 
         <div class="nav__close" id="nav-close">
